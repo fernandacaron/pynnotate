@@ -323,7 +323,7 @@ def main():
         feature_names = set(synonym_dict.keys())
     else: 
         feature_names = args.features
-
+        
     for accession in accession_ids:
         species_name = None  
         try:
@@ -345,9 +345,9 @@ def main():
 
     feature_names_prefix = [f"Acc_{name}" for name in feature_names]
     data_accession_df = pd.DataFrame(data_accession, 
-                                     columns = ["Sequence_names",
-                                                "General_accession"] + 
-                                                feature_names_prefix)
+                                    columns = ["Sequence_names", 
+                                    "General_accession"] + 
+                                    feature_names_prefix)
 
     if args.output:
         folder = args.output if isinstance(args.output, str) else args.output[0]
