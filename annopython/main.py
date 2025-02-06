@@ -31,7 +31,7 @@ def get_args():
 
     parser.add_argument("-r", "--repeated",
                         type=str,
-                        help="CSV file listing features with more than one copy.",
+                        help="File listing features with more than one copy (.txt or .csv).",
                         required=False)
 
     parser.add_argument("-o", "--output",
@@ -42,7 +42,7 @@ def get_args():
 
     parser.add_argument("-s", "--add_synonyms",
                         type=str,
-                        help="CSV file containing new synonyms.",
+                        help="File containing new synonyms (.txt or .csv).",
                         required=False,
                         default="")
 
