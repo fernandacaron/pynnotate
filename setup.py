@@ -1,21 +1,21 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="annopython",  # Nome do pacote
-    version="0.1",  # Versão inicial
+    name="pynnotate",  
+    version="0.1", 
     description="A script for downloading and processing GenBank features.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/fernandacaron/annopython",  
+    url="https://github.com/fernandacaron/pynnotate",  
     packages=find_packages(),
-    py_modules=["annopython"],
+    py_modules=["pynnotate"],
     install_requires=[
         "biopython",
         "pandas",
     ],
     entry_points={
         "console_scripts": [
-            "annopython=annopython.main:main",
+            "pynnotate=pynnotate.main:main",
         ],
     },
     classifiers=[
