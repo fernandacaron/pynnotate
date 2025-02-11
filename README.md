@@ -1,4 +1,4 @@
-# Annopython
+# Pynnotate
 
 A Python tool for annotation processing.
 
@@ -7,6 +7,6 @@ A Python tool for annotation processing.
 Clone the repository and install with:
 
 ```bash
-git clone https://github.com/fernandacaron/annopython.git
-cd annopython
+git clone https://github.com/fernandacaron/pynnotate.git
+cd pynnotate
 pip install .
