@@ -5,6 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![License](https://img.shields.io/github/license/fernandacaron/pynnotate)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
+![Version](https://img.shields.io/github/v/release/fernandacaron/pynnotate?logo=github)
 
 ---
 
