@@ -10,7 +10,7 @@
 1.  [🚀 Installation](#-installation)
 2.  [💡 Features](#-features)
 3.  [🧪 Example usage](#-example-usage)
-4.  [⚙️ Argument Details](#-argument-details)
+4.  [⚙️ Argument Details](#%EF%B8%8F-argument-details)
 5.  [📘 Documentation](#-documentation)
 6.  [🤝 Contributing](#-contributing)
 7.  [📣 Citation](#-citation)
