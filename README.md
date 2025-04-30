@@ -1,22 +1,9 @@
-# Pynnotate
-
-A Python tool for annotation processing.
-
-## Installation
-
-Clone the repository and install with:
-
-```bash
-git clone https://github.com/fernandacaron/pynnotate.git
-cd pynnotate
-pip install .
-
 # 🧬 Pynnotate
 
 **Pynnotate** is a Python tool designed to streamline the annotation and extraction of specific gene features from GenBank files. It supports user-defined synonym dictionaries for gene names and automates the generation of per-feature FASTA files and summary tables.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![License](https://img.shields.io/github/license/SEU-USUARIO/pynnotate)
+![License](https://img.shields.io/github/license/fernandacaron/pynnotate)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 
 ---
@@ -26,7 +13,9 @@ pip install .
 You can install the latest version directly from GitHub:
 
 ```bash
-pip install git+https://github.com/SEU-USUARIO/pynnotate.git
+git clone https://github.com/fernandacaron/pynnotate.git
+cd pynnotate
+pip install .
 ```
 
 > Requirements: Python 3.8+, Biopython
@@ -78,13 +67,7 @@ Detailed documentation will be available soon. Stay tuned!
 
 ## 🤝 Contributing
 
-Contributions are welcome! To report bugs, request features, or submit improvements, please open an issue or a pull request. See the `CONTRIBUTING.md` file for guidelines.
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+Contributions are welcome! To report bugs, request features, or submit improvements, please open an issue or a pull request. 
 
 ---
 
@@ -93,5 +76,5 @@ This project is licensed under the [MIT License](LICENSE).
 If you use **Pynnotate** in your research, please cite it as follows:
 
 ```
-CARON, F. M. et al. Pynnotate: A feature annotation and extraction tool for GenBank files. GitHub: https://github.com/SEU-USUARIO/pynnotate
+Caron, F. S., Salles, M., & Domingos, F. M. B. C. (2025). pynnotate: a flexible tool for retrieving and processing genetic feature annotations from GenBank. GitHub: https://github.com/fernandacaron/pynnotate
 ```
