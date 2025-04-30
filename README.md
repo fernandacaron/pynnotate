@@ -31,7 +31,7 @@ cd pynnotate
 pip install .
 ```
 
-> Requirements: Python 3.8+, Biopython
+> Requirements: Python 3.7+, Biopython, Pandas
 
 ---
 
