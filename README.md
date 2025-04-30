@@ -2,6 +2,10 @@
 
 **Pynnotate** is a Python tool designed to streamline the annotation and extraction of specific gene features from GenBank files. It supports user-defined synonym dictionaries for gene names and automates the generation of per-feature FASTA files and summary tables.
 
+🚀 **Command-Line:** For coders, our Python tool provides ultimate control.
+
+✨ **Desktop App:** New to coding? Our web interface is just a click away: [Try it now!](https://fercaron.shinyapps.io/pynnotate/)
+
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![License](https://img.shields.io/github/license/fernandacaron/pynnotate)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
