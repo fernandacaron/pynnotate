@@ -7,6 +7,16 @@
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 ![Version](https://img.shields.io/github/v/release/fernandacaron/pynnotate?logo=github)
 
+## 📋 Table of Contents
+
+1.  [🚀 Installation](#installation)
+2.  [💡 Features](#features)
+3.  [🧪 Example usage](#example-usage)
+4.  [⚙️ Argument Details](#argument-details)
+5.  [📘 Documentation](#documentation)
+6.  [🤝 Contributing](#contributing)
+7.  [📣 Citation](#citation)
+
 ---
 
 ## 🚀 Installation
