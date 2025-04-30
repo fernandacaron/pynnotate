@@ -35,28 +35,42 @@ pip install .
 
 ## 🧪 Example usage
 
-```python
-from pynnotate import process_genbank
+To run Pynnotate, you need to provide several arguments via the command line. Here's a comprehensive example using the provided example files:
 
-# Input GenBank file
-gb_path = "your_file.gb"
-
-# Dictionary of feature name synonyms
-synonyms_dict = {
-    "COI": ["COI", "COX1", "CO1"],
-    "ATP6": ["ATP6"],
-    "ATP8": ["ATP8"]
-}
-
-# Run annotation and export results
-process_genbank(
-    gb_path,
-    feature_synonyms=synonyms_dict,
-    nucleotide_output="nucleotides.fasta",
-    aa_output="proteins.fasta",
-    summary_table="summary.csv"
-)
+```bash
+python main.py \
+    -e seu_email@exemplo.com \
+    -a examples/accession.csv \
+    -t mtDNA_animals \
+    -f examples/features.csv \
+    -r examples/repeated.csv \
+    -s examples/synonyms.csv \
+    -o output_folder
 ```
+
+#### Explanation of Arguments:
+
+-e or --email: Your email address (required to access GenBank).
+-a or --accession: Path to the file containing GenBank accession numbers. In this example, we're using examples/accession.csv.
+-t or --type: The type of DNA being processed (e.g., mtDNA_animals, mtDNA_plants, rDNA, cpDNA, or other). Here, we're using mtDNA_animals.
+-f or --features: (Optional) Path to the file listing specific features to extract. Here, we're using examples/features.csv. If not provided, all features are extracted.
+-r or --repeated: (Optional) Path to the file listing features that appear multiple times. Here, we're using examples/repeated.csv.
+-s or --add_synonyms: (Optional) Path to the file containing additional synonyms. Here, we're using examples/synonyms.csv.
+-o or --output: (Optional) Directory where output files will be saved. If not provided, files are saved in the current directory. In this case, a folder named output_folder will be created (if it doesn't exist).
+
+#### Important Notes:
+
+Make sure the paths to your input files are correct relative to where you're running the python main.py command.
+The -f, -r, and -s arguments are optional; include them only if you have files for specific features, repeated features and additional synonyms, respectively.
+Pynnotate will create the output_folder if it doesn't already exist.
+
+For more details, run:
+
+```bash
+python main.py -h
+```
+
+This will display the help message with a full list of available options.
 
 ---
 
