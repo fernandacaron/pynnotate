@@ -48,17 +48,19 @@ python main.py \
     -o output_folder
 ```
 
-#### Explanation of Arguments:
+### Explanation of Arguments:
 
 -e or --email: Your email address (required to access GenBank).
+
 -a or --accession: Path to the file containing GenBank accession numbers. In this example, we're using examples/accession.csv.
+
 -t or --type: The type of DNA being processed (e.g., mtDNA_animals, mtDNA_plants, rDNA, cpDNA, or other). Here, we're using mtDNA_animals.
 -f or --features: (Optional) Path to the file listing specific features to extract. Here, we're using examples/features.csv. If not provided, all features are extracted.
 -r or --repeated: (Optional) Path to the file listing features that appear multiple times. Here, we're using examples/repeated.csv.
 -s or --add_synonyms: (Optional) Path to the file containing additional synonyms. Here, we're using examples/synonyms.csv.
 -o or --output: (Optional) Directory where output files will be saved. If not provided, files are saved in the current directory. In this case, a folder named output_folder will be created (if it doesn't exist).
 
-#### Important Notes:
+### Important Notes:
 
 Make sure the paths to your input files are correct relative to where you're running the python main.py command.
 The -f, -r, and -s arguments are optional; include them only if you have files for specific features, repeated features and additional synonyms, respectively.
