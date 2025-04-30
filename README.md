@@ -48,18 +48,6 @@ python main.py \
     -o output_folder
 ```
 
-### Explanation of Arguments:
-
--e or --email: Your email address (required to access GenBank).
-
--a or --accession: Path to the file containing GenBank accession numbers. In this example, we're using examples/accession.csv.
-
--t or --type: The type of DNA being processed (e.g., mtDNA_animals, mtDNA_plants, rDNA, cpDNA, or other). Here, we're using mtDNA_animals.
--f or --features: (Optional) Path to the file listing specific features to extract. Here, we're using examples/features.csv. If not provided, all features are extracted.
--r or --repeated: (Optional) Path to the file listing features that appear multiple times. Here, we're using examples/repeated.csv.
--s or --add_synonyms: (Optional) Path to the file containing additional synonyms. Here, we're using examples/synonyms.csv.
--o or --output: (Optional) Directory where output files will be saved. If not provided, files are saved in the current directory. In this case, a folder named output_folder will be created (if it doesn't exist).
-
 ### Important Notes:
 
 Make sure the paths to your input files are correct relative to where you're running the python main.py command.
@@ -73,6 +61,152 @@ python main.py -h
 ```
 
 This will display the help message with a full list of available options.
+
+---
+
+## ⚙️ Argument Details
+
+Pynnotate is a command-line tool that accepts several arguments to customize the GenBank data retrieval and feature extraction process. Below is a detailed explanation of each argument:
+
+### **Required Arguments**
+
+These arguments must be provided for Pynnotate to run successfully.
+
+#### `-e` or `--email`
+
+* **Description:** Your valid email address. This is required by the NCBI Entrez API to identify users and is essential for accessing the GenBank database.
+* **Usage:**
+    ```bash
+    -e your_email@example.com
+    ```
+* **Example:**
+    ```bash
+    -e john.doe@university.edu
+    ```
+* **Importance:** Providing a valid email is crucial; otherwise, you may encounter errors or be blocked from accessing the NCBI Entrez API.
+
+#### `-a` or `--accession`
+
+* **Description:** The path to a file containing a list of GenBank accession numbers. Each accession number should be on a new line in the file. Pynnotate uses these accession numbers to retrieve the corresponding GenBank records. The file can be either a plain text file (`.txt`) or a CSV file (`.csv`) with one accession number per row.
+* **Usage:**
+    ```bash
+    -a path/to/accession_list.txt
+    ```
+    or
+    ```bash
+    -a path/to/accession_list.csv
+    ```
+* **Examples:**
+    * `accession_list.txt`:
+        ```text
+        AC12345.1
+        AC12346.2
+        AC12347.3
+        ```
+    * `accession_list.csv`:
+        ```csv
+        AC12345.1
+        AC12346.2
+        AC12347.3
+        ```
+* **Note:** Ensure that the file path is correct and the file exists.
+
+#### `-t` or `--type`
+
+* **Description:** Specifies the type of DNA being processed. This argument is crucial because it determines which predefined synonym dictionary Pynnotate will use to identify gene features.
+* **Supported Types:**
+    * `mtDNA_animals`: For animal mitochondrial DNA.
+    * `mtDNA_plants`: For plant mitochondrial DNA.
+    * `rDNA`: For ribosomal DNA.
+    * `cpDNA`: For chloroplast DNA.
+    * `other`:  If none of the above types apply, you can use 'other' and provide your own synonym dictionary.
+* **Usage:**
+    ```bash
+    -t mtDNA_animals
+    ```
+* **Caution:** Using an incorrect type may result in features not being identified correctly.
+
+### **Optional Arguments**
+
+These arguments are not required but can be used to customize the script's behavior.
+
+#### `-f` or `--features`
+
+* **Description:** The path to a file listing the specific features you want to extract from the GenBank records. If this argument is not provided, Pynnotate will extract all known features (using the specified synonym dictionary). The file should contain one feature name per line. It can be a `.txt` or `.csv` file.
+* **Usage:**
+    ```bash
+    -f path/to/features.txt
+    ```
+    or
+    ```bash
+    -f path/to/features.csv
+    ```
+* **Examples:**
+    * `features.txt`:
+        ```text
+        COI
+        ATP6
+        16S
+        ```
+    * `features.csv`:
+        ```csv
+        COI
+        ATP6
+        16S
+        ```
+* **Flexibility:** This argument allows you to extract only the features relevant to your analysis, reducing processing time and output file sizes.
+
+#### `-r` or `--repeated`
+
+* **Description:** The path to a file listing features that may appear multiple times within a genome.  This is important for handling cases where you need to extract each instance of a feature (e.g., multiple copies of a tRNA). The file should contain one feature name per line (.txt or .csv).
+* **Usage:**
+    ```bash
+    -r path/to/repeated.txt
+    ```
+    or
+    ```bash
+    -r path/to/repeated.csv
+    ```
+* **Example:**
+    * `repeated.txt`:
+        ```text
+        tRNA-Leu
+        ```
+    * `repeated.csv`:
+        ```csv
+        tRNA-Leu
+        ```
+* **Advanced Usage:** Pynnotate will create separate output files for each instance of these repeated features, naming them in a way that indicates their order or context.
+
+#### `-o` or `--output`
+
+* **Description:** The path to the directory where the output files (FASTA files and summary CSV) will be saved. If this argument is not provided, the output files will be saved in the current working directory. If the specified directory does not exist, Pynnotate will create it.
+* **Usage:**
+    ```bash
+    -o path/to/output_directory
+    ```
+* **Example:**
+    ```bash
+    -o results/
+    ```
+* **Organization:** Using this argument helps keep your output organized, especially when processing multiple datasets.
+
+#### `-s` or `--add_synonyms`
+
+* **Description:** The path to a file containing additional synonyms for gene features. This allows you to extend or override the default synonym dictionaries used by Pynnotate. The file should be a CSV with the official gene name in the first column and its synonyms in subsequent columns.
+* **Usage:**
+    ```bash
+    -s path/to/synonyms.csv
+    ```
+* **Example:**
+    * `synonyms.csv`:
+        ```csv
+        COI,COX1,CO1,cytochrome oxidase I
+        ND4,NADH4,NADH dehydrogenase subunit 4
+        ```
+* **Customization:** This argument is useful when working with non-standard gene names or when the default dictionaries do not cover all the synonyms you need.
+
+By understanding these arguments, you can effectively use Pynnotate to extract and analyze genetic features from GenBank data.
 
 ---
 
