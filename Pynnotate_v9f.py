@@ -367,22 +367,8 @@ def search_genbank(query):
         messagebox.showerror("Erro", f"Erro ao buscar: {e}")
         return []
                   
-def classificar_posicional_ser(start, ref_pos_all, tolerancia_bp=10):
-    pos_coi_end = min([p for g, ps in ref_pos_all.items() if g.upper() == "COI" for p in ps], default=float('inf'))
-    pos_nd4_end = max([p for g, ps in ref_pos_all.items() if g.upper() == "ND4" for p in ps], default=-1)
-
-    if pos_coi_end == float('inf') or pos_nd4_end == -1:
-        return "tRNA-Ser_unclassified"
-
-    if (pos_coi_end - tolerancia_bp) <= start <= pos_nd4_end:
-        return "tRNA-Ser_between_COI_ND4"
-    elif start > pos_nd4_end:
-        return "tRNA-Ser_after_ND4"
-    else:
-        return "tRNA-Ser_unclassified"
-        
-def classificar_posicional_leu(start, ref_pos_all):
-    # Considera apenas genes principais (CDS e rRNA), ignora tRNAs
+def classificar_posicional_tRNA(start, ref_pos_all, nome_trna, tolerancia_bp=10):
+    # Usa apenas genes principais (CDS e rRNA) como âncoras
     anchors = sorted(
         [(gene, pos) for gene, pos_list in ref_pos_all.items()
          if not gene.upper().startswith("TRNA") for pos in pos_list],
@@ -390,15 +376,18 @@ def classificar_posicional_leu(start, ref_pos_all):
     )
 
     for gene, pos in anchors:
-        if start < pos:
-            return f"tRNA-Leu_before_start_{gene}"
+        if start < (pos + tolerancia_bp):
+            return f"{nome_trna}_before_start_{gene}"
 
-    return "tRNA-Leu_unclassified"
+    return f"{nome_trna}_unclassified"
 
 def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_genes, gene_dict, aliases_desconhecidos, aliases_duplicados, agrupador_leu, agrupador_ser, seen_leu_ser):
 
+    import unicodedata
+
     original_id = record.annotations.get("original_id", record.id)
 
+    # Mapeamento de aliases
     alias_lookup = {}
     for main_name, aliases in alias_map.items():
         alias_lookup[main_name.upper()] = main_name
@@ -407,7 +396,7 @@ def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_gene
 
     genes_desejados_set = {g.upper() for g in genes_desejados} if genes_desejados else None
 
-    ref_pos = {}
+    # Armazena posições iniciais de genes principais
     ref_pos_all = {}
     for feature in record.features:
         if feature.type not in ["gene", "CDS", "rRNA", "tRNA"]:
@@ -431,14 +420,12 @@ def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_gene
         if not gene:
             continue
 
-        pos = int(feature.location.start)
-        if gene in ["12S", "16S", "ND1", "ND2", "COI", "ND4"] and gene not in ref_pos:
-            ref_pos[gene] = pos
-
+        pos = int(feature.location.start)  # usar .start para ancoragem por início
         if gene not in ref_pos_all:
             ref_pos_all[gene] = []
         ref_pos_all[gene].append(pos)
 
+    # Processa as sequências
     for feature in record.features:
         if feature.type not in ["gene", "CDS", "rRNA", "tRNA"]:
             continue
@@ -468,19 +455,14 @@ def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_gene
         if strand == -1:
             seq = seq.reverse_complement()
 
-        if name.upper() == "TRNA-LEU":
-            tag = classificar_posicional_leu(start, ref_pos_all)
+        if name in ["tRNA-Leu", "tRNA-Ser"]:
+            tag = classificar_posicional_tRNA(start, ref_pos_all, name)
             chave = (original_id, name, tag)
             if chave not in seen_leu_ser:
-                agrupador_leu[tag].append((header_id, str(seq), original_id))
-                seen_leu_ser.add(chave)
-            continue
-
-        elif name.upper() == "TRNA-SER":
-            tag = classificar_posicional_ser(start, ref_pos_all)
-            chave = (original_id, name, tag)
-            if chave not in seen_leu_ser:
-                agrupador_ser[tag].append((header_id, str(seq), original_id))
+                if name.upper() == "TRNA-LEU":
+                    agrupador_leu[tag].append((header_id, str(seq), original_id))
+                else:
+                    agrupador_ser[tag].append((header_id, str(seq), original_id))
                 seen_leu_ser.add(chave)
             continue
 
@@ -493,6 +475,7 @@ def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_gene
         gene_dict[name].append((header_id, str(seq), original_id))
         seen_genes.add((original_id, name))
 
+    # Remove tRNAs do gene_dict final (caso escapem)
     gene_dict.pop("tRNA-Leu", None)
     gene_dict.pop("tRNA-Ser", None)
 
