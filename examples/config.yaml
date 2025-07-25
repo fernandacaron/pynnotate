@@ -1,0 +1,38 @@
+###### config.yaml for Pynnotate ######
+
+type: animal_mito # REQUIRED: Type of DNA (animal_mito, plant_mito, plant_chloro, other)"
+email: fernandacaron@hotmail.com # REQUIRED: User e-mail to access NCBI database
+output: /Users/fercaron/Downloads # Output folder (will be created if it does not exist)
+folder: test
+accession: # List of GenBank accession numbers
+  - GU457846
+  - NC_004815
+  - AF534390
+  - AH012845
+genes: # List of genes to search/download
+  #- COI
+  #- CYTB
+organism: Sphenodon # Organism to search/download
+publication: # Publication term (title, authors, year)
+additional: # Any additional search terms, e.g. NOT sp.
+mitochondrialgene: false # Refine your search terms to Mitochondrial gene
+mitogenome: false # Refine your search terms to Mitogenome
+chloroplast: false # Refine your search terms to Chloroplast
+annotated: true # Delete unannotated records 
+header: # Header fields (Genbank fields)
+  - organism
+genbankid: true # Include GenBank ID in fasta header
+filter_mode: flexible # Unconstrained, flexible, or strict mode
+prioritize: true # Prioritize individual with more genes (mitochondrial)
+add_synonyms: # List of new synonyms
+  CYTB:
+  - CYTOCHROME B
+  - CYT B
+  - CYTB
+  - CYT-B
+  - MT-CYB
+minbp:  # Minimum sequence size (bp)
+maxbp: # Maximum sequence size (bp)
+extraction: true # Extract all annotated genes separately
+overlap: false # Fix overlap between extracted genes
+logmissing: true # Create missing genes log per sample (useful for mitogenomes)
