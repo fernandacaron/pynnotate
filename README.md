@@ -176,7 +176,7 @@ Descrição: Define como as sequências serão filtradas por espécie. Este par�
 
 **⚠️ ATENÇÃO**: Quando o modo unconstrained é usado em combinação com a extração de genes separadamente (`--extraction`), todas as sequências correspondentes aos genes selecionados serão baixadas, mesmo que haja múltiplos registros por espécie.
 
-#### Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados
+**🚨 Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados:**
 
 ##### `-a` ou `--accession` 
 
