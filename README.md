@@ -13,26 +13,33 @@ Desenvolvido tanto para pesquisadores avançados quanto para professores e aluno
 2.  [🖼️ Interface](#-interface)
 3.  [🛠️ Requisitos](#-requisitos)
 4.  [💾 Instalação](#-instalação)
-5.  [🧪 Exemplo de uso](#-exemplo)
-6.  [⚙️ Detalhes dos Argumentos](#-detalhes)
+5.  [🧪 Exemplo de uso](#-exemplodeuso)
+6.  [⚙️ Detalhes dos Argumentos](#-detalhesdosargumentos)
+7.  [🧾 Arquivos gerados](#-arquivosgerados)
+8.  [🤝 Contribuição](#-contribuicao)
+9.  [📣 Citação](#-citacao)
+
 
 ---
 
+
 ## 👥 Autores
 
-**Fernanda de Souza Caron**
+**Fernanda de Souza Caron**  
 Pesquisadora de doutorado, PPG Ecologia e Conservação (UFPR)
 
 **Felipe de Medeiros Magalhães**  
 Pesquisador Pós-doc, Universidade Federal da Paraíba (UFPB)  
 
-**Matheus Salles**
+**Matheus Salles**  
 Pesquisador de doutorado, PPG Zoologia (UFPR)
 
-**Fabricius M. C. B. Domingos**
+**Fabricius M. C. B. Domingos**  
 Pesquisador e professor, PPG Zoologia (UFPR)
 
+
 ---
+
 
 ## ✨ Funcionalidades
 
@@ -49,6 +56,7 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 - 📂 Geração completa de arquivos FASTA, planilhas Excel e logs detalhados, prontos para uso em aulas ou pesquisas
 
 ---
+
 
 ## 🖼️ Interface
 
