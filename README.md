@@ -46,10 +46,10 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 - 🔍 Busca simples por termos livres ou IDs específicos no GenBank
 - 🧠 Extração automática de genes com agrupamento por sinônimos
 - ✂️ Filtros por tamanho da sequência e opções para priorizar amostras, ideal para diferentes níveis de análise
-- Modos de filtragem adaptados:
-  🌐 Modo irrestrito: inclui todas as sequências encontradas
-  🌱 Modo flexível (unique_species = True): permite múltiplas sequências por espécie se genes forem diferentes
-  🔒 Modo estrito (prioritize_more_genes = True): inclui apenas a melhor sequência por espécie, facilitando análises simples
+- Modos de filtragem adaptados:  
+  🌐 Modo irrestrito: inclui todas as sequências encontradas  
+  🌱 Modo flexível (unique_species = True): permite múltiplas sequências por espécie se genes forem diferentes  
+  🔒 Modo estrito (prioritize_more_genes = True): inclui apenas a melhor sequência por espécie, facilitando análises simples  
 - 🧬 Suporte para mitogenomas, cloroplastos e genomas nucleares
 - 👓 Identificação automática de múltiplas cópias de tRNA-Leu e tRNA-Ser, com agrupamento por posição genômica
 - 🖼️ Interface gráfica intuitiva para configuração, execução e acompanhamento dos processos sem necessidade de linha de comando
@@ -176,7 +176,7 @@ Descrição: Define como as sequências serão filtradas por espécie. Este par�
 
 **⚠️ ATENÇÃO**: Quando o modo unconstrained é usado em combinação com a extração de genes separadamente (`--extraction`), todas as sequências correspondentes aos genes selecionados serão baixadas, mesmo que haja múltiplos registros por espécie.
 
-##### Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados
+#### Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados
 
 ##### `-a` ou `--accession` 
 
