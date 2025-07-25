@@ -65,12 +65,12 @@ def get_args():
                         choices=["unconstrained", "flexible", "strict"],
                         default="unconstrained",
                         help=(
-                            "Filtering mode: "
+                            "REQUIRED: Filtering mode: "
                             "'unconstrained' = include all sequences, "
                             "'flexible' = allow multiple sequences per species if they have new genes (e.g. supermatrix), "
                             "'strict' = include only one sequence per species, prioritizing individuals with more genes\n\n"
                             "⚠️ In 'strict' mode, filtering is based on the genes available in the selected gene dictionary and/or any user-provided gene dictionary.\n"
-                            "⚠️ When 'unconstrained' mode is used in combination with separate gene extraction (see next tab), the downloaded sequences will correspond to the gene set in the selected and/or user-provided dictionary."
+                            "⚠️ When 'unconstrained' mode is used in combination with separate gene extraction, the downloaded sequences will correspond to the gene set in the selected and/or user-provided dictionary."
                             )
                         )
     parser.add_argument("--prioritize", 
@@ -107,7 +107,7 @@ def get_args():
                         help="REQUIRED: User e-mail to access NCBI database")
     parser.add_argument("-o", "--output",
                         type=str,
-                        help="Output folder",
+                        help="REQUIRED: Output folder",
                         required=True,
                         default=".")
     parser.add_argument("-f", "--folder",
