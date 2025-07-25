@@ -1,8 +1,8 @@
 
 # ======= ALIAS MAPS POR ORGANISMO/ORGANELA =======
 alias_map_animal = {
-    "12S": ["12 S RIBOSOMAL RNA", "12S", "12S RIBOSOMAL RNA", "12S RIBOSORMAL RNA", "12S RRN", "12S RRNA", "12S SMALL SUBUNIT RIBOSOMAL RNA", "12S-RRNA", "12SRRN", "12SRRNA", "12S_RIBOSOMAL_RNA", "12S_RRN", "MT-RNR1", "MTRNR1", "RNS", "RRN12", "RRNA-12S", "RRNAS", "RRNS", "S RRNA", "S-RRNA", "SMALL RIBOSOMAL RNA SUBUNIT RNA", "SMALL SUBUNIT RIBOSOMAL RNA", "SMALL SUBUNIT RIBOSORMAL RNA", "SMALL SUBUNIT RRNA", "SSU", "SSU RRNA", "12S ribosoma RNA"],
-    "16S": ["16 S RIBOSOMAL RNA", "16RRN", "16S", "16S RIBOSOMAL RNA", "16S RRN", "16S RRNA", "16S LARGE SUBUNIT RIBOSOMAL RNA", "16S-RRNA", "16SRRN", "16SRRNA", "16S_RIBOSOMAL_RNA", "16S_RRN", "L RRNA", "L-RNA", "L-RRNA", "LARGE RIBOSOMAL RNA SUBUNIT RNA", "LARGE SUBUNIT RIBOSOMAL RNA", "LSU", "LSU RRNA", "MT-RNR2", "MTRNR2", "RNL", "RRL", "RRN16", "RRNAL", "RRNL", "16S ribosomalRNA", "16S bibosomal RNA"],
+    "12S": ["12 S RIBOSOMAL RNA", "RRNA 12S", "12S", "12S RIBOSOMAL RNA", "12S RIBOSORMAL RNA", "12S RRN", "12S RRNA", "12S SMALL SUBUNIT RIBOSOMAL RNA", "12S-RRNA", "12SRRN", "12SRRNA", "12S_RIBOSOMAL_RNA", "12S_RRN", "MT-RNR1", "MTRNR1", "RNS", "RRN12", "RRNA-12S", "RRNAS", "RRNS", "S RRNA", "S-RRNA", "SMALL RIBOSOMAL RNA SUBUNIT RNA", "SMALL SUBUNIT RIBOSOMAL RNA", "SMALL SUBUNIT RIBOSORMAL RNA", "SMALL SUBUNIT RRNA", "SSU", "SSU RRNA", "12S RIBOSOMA RNA", "12S RRNA'"],
+    "16S": ["16 S RIBOSOMAL RNA", "RRNA 16S", "16RRN", "16S", "16S RIBOSOMAL RNA", "16S RRN", "16S RRNA", "16S LARGE SUBUNIT RIBOSOMAL RNA", "16S-RRNA", "16SRRN", "16SRRNA", "16S_RIBOSOMAL_RNA", "16S_RRN", "L RRNA", "L-RNA", "L-RRNA", "LARGE RIBOSOMAL RNA SUBUNIT RNA", "LARGE SUBUNIT RIBOSOMAL RNA", "LSU", "LSU RRNA", "MT-RNR2", "MTRNR2", "RNL", "RRL", "RRN16", "RRNAL", "RRNL", "16S RIBOSOMALRNA", "16S BIBOSOMAL RNA", "16 RIBOSOMAL RNA", "16S LARGE RIBOSOMAL RNA", "16S RIBOSORMAL RNA"],
     "COI": ["CO I", "CO-I", "CO1", "COI", "COX I", "COX-I", "COX1", "COXI", "CYTOCHROME C OXIDASE SUBUNIT 1", "CYTOCHROME C OXIDASE SUBUNIT I", "CYTOCHROME C OXIDASE SUBUNIT1", "CYTOCHROME OXIDASE C SUBUNIT 1", "CYTOCHROME OXIDASE I", "CYTOCHROME OXIDASE SUBUNIT 1", "CYTOCHROME OXIDASE SUBUNIT I", "CYTOCHROME OXIDASE SUBUNIT1", "MT-CO1"],
     "COII": ["CO II", "CO2", "COII", "COX II", "COX-II", "COX2", "COXII", "CYTOCHROME C OXIDASE SUBUNIT 2", "CYTOCHROME C OXIDASE SUBUNIT II", "CYTOCHROME C OXIDASE SUBUNIT2", "CYTOCHROME OXIDASE II", "CYTOCHROME OXIDASE SUBUNIT 2", "CYTOCHROME OXIDASE SUBUNIT II", "CYTOCHROME OXIDASE SUBUNIT2", "MT-CO2"],
     "COIII": ["CO III", "CO3", "CO3 SUBUNIT 3", "COIII", "COX III", "COX-III", "COX3", "COXIII", "CYTOCHROME C OXIDASE SUBUNIT 3", "CYTOCHROME C OXIDASE SUBUNIT III", "CYTOCHROME C OXIDASE SUBUNIT3", "CYTOCHROME OXIDASE C SUBUNIT 3", "CYTOCHROME OXIDASE III", "CYTOCHROME OXIDASE SUBUNIT 3", "CYTOCHROME OXIDASE SUBUNIT III", "CYTOCHROME OXIDASE SUBUNIT3", "MT-CO3"],
@@ -17,25 +17,26 @@ alias_map_animal = {
     "ATP6": ["APT6", "AT6", "ATP SYNTHASE 6", "ATP SYNTHASE F0 SUBUNIT 6", "ATP SYNTHASE SUBUNIT 6", "ATP SYTHASE SUBUNIT 6", "ATP6", "ATPASE 6", "ATPASE SUBUNIT 6", "ATPASE6", "F0-ATP SYNTHASE SUBUNIT6", "MT-ATP6", "MTATP6"],
     "ATP8": ["APT8", "AT8", "ATP SYNTHASE 8", "ATP SYNTHASE F0 SUBUNIT 8", "ATP SYNTHASE SUBUNIT 8", "ATP SYTHASE SUBUNIT 8", "ATP8", "ATPASE 8", "ATPASE SUBUNIT 8", "ATPASE8", "F0-ATP SYNTHASE SUBUNIT8", "MT-ATP8", "MTATP8"],
     "tRNA-Ala": ["TRNA", "TRNA ALA", "TRNA TGC", "TRNA(UGC)", "TRNA-ALA", "TRNA-UGC", "TRNA_ALA", "TRNA(TGC)", "TRNA-TGC"],
-    "tRNA-Arg": ["TRNA ARG", "TRNA-ARG", "TRNA_ARG", "TRNR", "TRNR TCG", "TRNR(UCG)", "TRNR-UCG", "TRNA(TCG)", "TRNR(TCG)", "TRNR-TCG"],
-    "tRNA-Asn": ["TRNA ASN", "TRNA-ASN", "TRNA_ASN", "TRNA-ASX", "TRNN", "TRNN GTT", "TRNN(GUU)", "TRNN-GUU", "TRNN(GTT)", "TRNN-GTT"],
+    "tRNA-Arg": ["TRNA ARG", "TRNA-ARG", "TRNA_ARG", "TRNR", "TRNR TCG", "TRNR(UCG)", "TRNR-UCG", "TRNA(TCG)", "TRNR(TCG)", "TRNR-TCG", "TRNR(CGA)"],
+    "tRNA-Asn": ["TRNA ASN", "TRNA-ASN", "TRNA_ASN", "TRNA-ASX", "TRNN", "TRNN GTT", "TRNN(GUU)", "TRNN-GUU", "TRNN(GTT)", "TRNN-GTT", "TRNN(AAC)"],
     "tRNA-Asp": ["TRNA ASP", "TRNA-ASP", "TRNA_ASP", "TRND", "TRND GTC", "TRND(GUC)", "TRND-GUC", "TRND(GAC)", "TRND(GTC)", "TRND-GTC"],
     "tRNA-Cys": ["TRNA CYS", "TRNA-CYS", "TRNA_CYS", "TRNC", "TRNC GCA", "TRNC(GCA)", "TRNC-GCA", "TRNA(GCA)"],
-    "tRNA-Gln": ["TRNA GLN", "TRNA-GLN", "TRNA_GLN", "TRNQ", "TRNQ TTG", "TRNQ(UUG)", "TRNQ-UUG", "TRNQ(TTG)", "TRNQ-TTG"],
+    "tRNA-Gln": ["TRNA GLN", "TRNA-GLN", "TRNA_GLN", "TRNQ", "TRNQ TTG", "TRNQ(UUG)", "TRNQ-UUG", "TRNQ(TTG)", "TRNQ-TTG", "TRNA-GLX", "TRNQ(CAA)"],
     "tRNA-Glu": ["TRNA-GLU", "TRNA_GLU", "TRNE", "TRNE TTCTRNA GLU", "TRNE(UUC)", "TRNE-UUC", "TRNE(TTC)", "TRNE-TTC"],
     "tRNA-Gly": ["TRNA-GLY", "TRNA_GLY", "TRNG", "TRNG TCCTRNA GLY", "TRNG(UCC)", "TRNG-UCC", "TRNG(TCC)", "TRNG-TCC"],
     "tRNA-His": ["TRNA HIS", "TRNA-HIS", "TRNA_HIS", "TRNH", "TRNH GTG", "TRNH(GUG)", "TRNH-GUG", "TRNH(GTG)", "TRNH-GTG"],
     "tRNA-Ile": ["TRNA ILE", "TRNA-ILE", "TRNA_ILE", "TRNI", "TRNI GAT", "TRNI(GAU)", "TRNI-GAU", "TRNI(GAT)", "TRNI-GAT"],
     "tRNA-Leu": ["TRNA-LEU", "TRNA_LEU", "TRNL", "TRNA LEU(CUN)", "TRNA-LEU (CUN)", "TRNA-LEU(CUN)", "TRNL (CUN)", "TRNL(CUN)", "TRNL TAG", "TRNL(UAG)", "TRNL-UAG", "TRNL-TAG", "TRNL1", "TRNL1(TAG)", "TRNL(TAG)", "TRNA LEU(UUR)", "TRNA-LEU (UUR)", "TRNA-LEU(UUR)", "TRNL (UUR)", "TRNL(UUR)", "TRNL2", "TRNL2(TAA)", "TRNL2(TTA)"],
     "tRNA-Lys": ["TRNA-LYS", "TRNA_LYS", "TRNK", "TRNK TTTTRNA LYS", "TRNK(UUU)", "TRNK-UUU", "TRNK(TTT)", "TRNK-TTT"],
-    "tRNA-Met": ["TRNA MET", "TRNA-MET", "TRNA_MET", "TRNM", "TRNM CAT", "TRNM(CAU)", "TRNM-CAU", "TRNM(CAT)", "TRNM-CAT", "TRNM_1(CAT)"],
+    "tRNA-Met": ["TRNA MET", "TRNA-MET", "TRNA_MET", "TRNM", "TRNM CAT", "TRNM(CAU)", "TRNM-CAU", "TRNM(CAT)", "TRNM-CAT", "TRNM_1(CAT)", "TRNM(ATG)"],
     "tRNA-Phe": ["TRNA-PHE", "TRNA_PHE", "TRNF GAA", "TRNF(GAA)", "TRNF-GAA"],
-    "tRNA-Pro": ["PROLINE TRNA", "TRNA PRO", "TRNA-PRO", "TRNA_PRO", "TRNP TGG", "TRNP(UGG)", "TRNP-UGG", "TRNP(TGG)", "TRNP-TGG"],
-    "tRNA-Ser": ["TRNA SER (AGY)", "TRNA SER(UCN)", "TRNA-SER", "TRNA-SER (UCN)", "TRNA-SER(AGY)", "TRNA-SER(UCN)", "TRNA_SER", "TRNA_SER (AGY)", "TRNS", "TRNS GCT", "TRNS(GCU)", "TRNS(UGA)", "TRNS-UGA", "trnS1(gct)"],
-    "tRNA-Thr": ["THREONINE TRNA", "TRNA THR", "TRNA-THR", "TRNA_THR", "TRNT TGT", "TRNT(UGU)", "TRNT-UGU", "TRNT(TGT)"],
+    "tRNA-Pro": ["PROLINE TRNA", "TRNA PRO", "TRNA-PRO", "TRNA_PRO", "TRNP TGG", "TRNP(UGG)", "TRNP-UGG", "TRNP(TGG)", "TRNP-TGG", "TRNP(CCA)"],
+    "tRNA-Ser": ["TRNA SER (AGY)", "TRNA-SER (AGY)", "TRNA SER(UCN)", "TRNA-SER", "TRNA-SER (UCN)", "TRNA-SER(AGY)", "TRNA-SER(UCN)", "TRNA_SER", "TRNA_SER (AGY)", "TRNS", "TRNS GCT", "TRNS(GCU)", "TRNS(UGA)", "TRNS-UGA", "trnS1(gct)", "TRNS-TGA", "TRNS-GCU"],
+    "tRNA-Thr": ["THREONINE TRNA", "TRNA THR", "TRNA-THR", "TRNA_THR", "TRNT TGT", "TRNT(UGU)", "TRNT-UGU", "TRNT(TGT)", "TRNT-TGT", "TRNT(ACA)"],
     "tRNA-Trp": ["TRNA TRP", "TRNA-TRP", "TRNA_TRP", "TRNW", "TRNW TCA", "TRNW(UCA)", "TRNW-UCA", "TRNW(TCA)", "TRNW(TGA)", "TRNW-TCA"],
-    "tRNA-Tyr": ["TRNA TYR", "TRNA-TYR", "TRNA_TYR", "TRNY", "TRNY GTA", "TRNY(GUA)", "TRNY-GUA", "TRNY(GTA)", "TRNY(TAC)", "TRNY-GTA"],
-    "tRNA-Val": ["TRNA-VAL", "TRNA_VAL", "TRNV", "TRNV TAC", "TRNV(UAC)", "TRNV-UAC", "TRNV(TAC)", "TRNV-TAC"],
+    "tRNA-Tyr": ["TRNA TYR", "TRNA-TYR", "TRNA_TYR", "TRNY", "TRNY GTA", "TRNY(GUA)", "TRNY-GUA", "TRNY(GTA)", "TRNY(TAC)", "TRNY-GTA", "TRNA-TRY"],
+    "tRNA-Val": ["TRNA-VAL", "TRNA_VAL", "TRNV", "TRNV TAC", "TRNV(UAC)", "TRNV-UAC", "TRNV(TAC)", "TRNV-TAC", "TRNV(GTA)"],
+    "H1": ["contains 12S ribosomal RNA, tRNA-Val, and 16S ribosomal RNA"],
   
       # Ribossomais nucleares e ITS
     "18S": ["18S", "18S RRNA", "18S RIBOSOMAL RNA", "SMALL SUBUNIT RRNA"],
@@ -44,22 +45,22 @@ alias_map_animal = {
     "ITS2": ["ITS2", "INTERNAL TRANSCRIBED SPACER 2"],
 
     # Nucleares clássicos
-    "RAG1": ["RAG1", "RECOMBINATION ACTIVATING GENE 1"],
-    "RAG2": ["RAG2", "RECOMBINATION ACTIVATING GENE 2"],
+    "RAG1": ["RAG1", "RECOMBINATION ACTIVATING GENE 1", "RAG-1", "recombination activating protein 1"],
+    "RAG2": ["RAG2", "RECOMBINATION ACTIVATING GENE 2", "RAG-2", "recombination activating protein 2"],
     "BDNF": ["BDNF", "BRAIN-DERIVED NEUROTROPHIC FACTOR"],
     "CMOS": ["CMOS", "C-MOS", "OOCYTE MATURATION FACTOR MOS"],
     "POMC": ["POMC", "PROOPIOMELANOCORTIN"],
-    "TYR": ["TYR", "TYROSINASE"],
+    "TYR": ["TYR", "TYROSINASE", "TYROSINASE PRECURSOR"],
     "RHO": ["RHO", "RHODOPSIN"],
     "SIAH1": ["SIAH1", "SEVEN IN ABSENTIA 1", "SEVEN IN ABSENTIA-LIKE PROTEIN 1"],
-    "CRYB": ["CRYB", "CRYBA1", "BETA-CRYSTALLIN", "BETA CRYSTALLIN"],
+    "CRYB": ["CRYB", "CRYBA1", "BETA-CRYSTALLIN", "BETA CRYSTALLIN", "CRYBA"],
     "TNS3": ["TNS3", "TENSIN 3"],
     "S7": ["S7", "S7 RIBOSOMAL PROTEIN", "40S RIBOSOMAL PROTEIN S7"],
     "TYRP1": ["TYRP1", "TYROSINASE-RELATED PROTEIN 1"],
     "EIF3": ["EIF3", "EUKARYOTIC TRANSLATION INITIATION FACTOR 3"],
     "CXCR4": ["CXCR4", "CHEMOKINE RECEPTOR"],
     "NT3": ["NT3", "NEUROTROPHIN 3"],
-    "FIB7": ["FGBI7", "FIBRINOGEN BETA CHAIN INTERGENIC", "FIB7"],
+    "FIB7": ["FGBI7", "FIBRINOGEN BETA CHAIN INTERGENIC", "FIB7", "BETA-FIBRINOGEN", "BFIB"],
     "MYH6": ["MYH6", "ALPHA MYOSIN HEAVY CHAIN"],
     "CMYC": ["CMYC", "C-MYC", "MYC PROTO-ONCOGENE"],
     "CMYC2": ["CMYC2", "MYC 2ND COPY"],
@@ -265,9 +266,13 @@ from pathlib import Path
 import threading
 import logging
 import unicodedata
+import queue
+from http.client import IncompleteRead
+import time
 
 Entrez.email = "felipemm17@gmail.com"
 Entrez.api_key = "8ccf2aa69a00f2eab2f1eafa1133c1bb9009"
+error_queue = queue.Queue()
 
 valid_fields = [
     "organism", "isolate", "specimen_voucher", "country", "collection_date",
@@ -360,7 +365,7 @@ def show_gene_selector(entry_widget, org_type):
             
 def search_genbank(query):
     try:
-        with Entrez.esearch(db="nucleotide", term=query, retmax=100000) as search_handle:
+        with Entrez.esearch(db="nucleotide", term=query, retmax=999999) as search_handle:
             search_results = Entrez.read(search_handle)
             return search_results["IdList"]
     except Exception as e:
@@ -382,8 +387,6 @@ def classificar_posicional_tRNA(start, ref_pos_all, nome_trna, tolerancia_bp=10)
     return f"{nome_trna}_unclassified"
 
 def extrair_genes_geral(record, header_id, alias_map, genes_desejados, seen_genes, gene_dict, aliases_desconhecidos, aliases_duplicados, agrupador_leu, agrupador_ser, seen_leu_ser):
-
-    import unicodedata
 
     original_id = record.annotations.get("original_id", record.id)
 
@@ -569,56 +572,194 @@ def gerar_excel_metadados_por_gene(gene_dict, excel_data, header_fields, output_
         entries = sorted(entries, key=lambda x: header_map.get(x[2], {}).get("organism", "").lower())
          
         for head, _, original_id in entries:
-            meta = header_map.get(original_id, {})
+            meta = header_map.get(original_id, {}).copy()
+            if "organism" in meta:
+                meta["organism"] = normalizar_organism(meta["organism"])
             ws.append([original_id] + [meta.get(f, "") for f in header_fields])
 
     out_path = os.path.join(os.path.dirname(output_base), os.path.basename(output_base) + "_genes_metadados.xlsx")
     wb.save(out_path)
 
-def gerar_excel_matriz_gene_vs_amostra(gene_dict, excel_data, header_fields, output_base):
-    from openpyxl import Workbook
-    import os
-
+def gerar_excel_matriz_gene_vs_amostra(gene_dict, excel_data, header_fields, output_base, config):
+    priorizar_mais_genes = config.get("priorizar_mais_genes", False)
     header_map = dict(excel_data)
     genes = sorted(gene_dict.keys())
-    amostras = {}
 
-    # Coleta metadados por ID
-    meta_por_id = {
-        genbank_id: {field: valores.get(field, '') for field in header_fields}
-        for genbank_id, valores in header_map.items()
-    }
+    if config.get("priorizar_mais_genes"):
+        # Lógica nova: consolidar por amostra (organism + voucher/isolate)
+        amostras = defaultdict(lambda: {"genes": {}, "genbanks": set()})
+        for gene, entradas in gene_dict.items():
+            for _, _, genbank_id in entradas:
+                meta = header_map.get(genbank_id, {})
+                org = meta.get("organism", "").strip()
+                org = normalizar_organism(org)
+                voucher = meta.get("specimen_voucher", "").strip()
+                isolate = meta.get("isolate", "").strip()
+                ident = voucher or isolate or genbank_id
+                chave = (org, ident)
+                amostras[chave]["genes"][gene] = genbank_id
+                amostras[chave]["metadados"] = {f: (org if f == "organism" else meta.get(f, '')) for f in header_fields}
+                amostras[chave]["genbanks"].add(genbank_id)
 
-    # Preenche matriz com GenBank ID como chave interna
-    for gene, seqs in gene_dict.items():
-        for _, _, genbank_id in seqs:
-            if genbank_id in meta_por_id:
-                if genbank_id not in amostras:
-                    amostras[genbank_id] = {
-                        "metadados": meta_por_id[genbank_id],
-                        "genes": {g: '' for g in genes}
-                    }
-                amostras[genbank_id]["genes"][gene] = genbank_id
+        # Cria planilha consolidada por amostra
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "matriz_gene_vs_amostra"
+        ws.append(header_fields + genes)
 
-    # Cria planilha
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "matriz_gene_vs_amostra"
-    ws.append(header_fields + genes)
+        ordenado = sorted(
+            amostras.items(),
+            key=lambda x: x[1]["metadados"].get("organism", "").lower()
+        )
 
-    ordenado = sorted(
-    amostras,
-    key=lambda x: amostras[x]["metadados"].get("organism", "").lower()
-    )
-    
-    for genbank_id in ordenado:
-        meta = amostras[genbank_id]["metadados"]
-        gene_map = amostras[genbank_id]["genes"]
-        linha = [meta[f] for f in header_fields] + [gene_map[g] for g in genes]
-        ws.append(linha)
+        for _, dados in ordenado:
+            linha = [dados["metadados"].get(f, "") for f in header_fields]
+            linha += [dados["genes"].get(g, "") for g in genes]
+            ws.append(linha)
+
+    else:
+        # Lógica original: uma linha por GenBank ID
+        amostras = {}
+        for gene, seqs in gene_dict.items():
+            for _, _, genbank_id in seqs:
+                if genbank_id in header_map:
+                    if genbank_id not in amostras:
+                        amostras[genbank_id] = {
+                            "metadados": {f: header_map[genbank_id].get(f, '') for f in header_fields},
+                            "genes": {g: '' for g in genes}
+                        }
+                    amostras[genbank_id]["genes"][gene] = genbank_id
+
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "matriz_gene_vs_amostra"
+        ws.append(header_fields + genes)
+
+        ordenado = sorted(
+            amostras,
+            key=lambda x: normalizar_organism(amostras[x]["metadados"].get("organism", "")
+        )
+
+        for genbank_id in ordenado:
+            meta = amostras[genbank_id]["metadados"]
+            gene_map = amostras[genbank_id]["genes"]
+            linha = [meta[f] for f in header_fields] + [gene_map[g] for g in genes]
+            ws.append(linha)
 
     out_path = os.path.join(os.path.dirname(output_base), os.path.basename(output_base) + "_matriz_gene_amostra.xlsx")
     wb.save(out_path)
+    
+def filtrar_melhores_individuos_por_especie(all_records, alias_map, genes_desejados, motivos_remocao):
+    from collections import defaultdict
+
+    registros_filtrados = []
+    grupos_por_especie = defaultdict(list)
+
+    for record in all_records:
+        organism = record.annotations.get("organism", "")
+        organism = normalizar_organism(organism)
+        voucher = ""
+        isolate = ""
+        for feature in record.features:
+            if feature.type == "source":
+                voucher = feature.qualifiers.get("specimen_voucher", [""])[0]
+                isolate = feature.qualifiers.get("isolate", [""])[0]
+                break
+        ident = voucher or isolate or record.id
+        grupos_por_especie[(organism, ident)].append(record)
+
+    candidatos_por_especie = defaultdict(list)
+    for (organism, ident), registros in grupos_por_especie.items():
+        candidatos_por_especie[organism].append((ident, registros))
+
+    for especie, candidatos in candidatos_por_especie.items():
+        melhor = None
+        melhor_id = None
+        maior_n = -1
+        for ident, registros in candidatos:
+            genes_temp = set()
+            seen_temp = set()
+            dummy_dict = {}
+            dummy_seen_leu_ser = set()
+            dummy_agrupador_leu = defaultdict(list)
+            dummy_agrupador_ser = defaultdict(list)
+            for r in registros:
+                r.annotations["original_id"] = r.id.split(".")[0]
+                extrair_genes_geral(
+                    r, "dummy", alias_map, genes_desejados, seen_temp,
+                    dummy_dict, set(), set(), dummy_agrupador_leu, dummy_agrupador_ser, dummy_seen_leu_ser
+                )
+            genes_temp.update(dummy_dict.keys())
+            if len(genes_temp) > maior_n:
+                maior_n = len(genes_temp)
+                melhor = registros
+                melhor_id = ident
+            elif len(genes_temp) == maior_n and not melhor:
+                melhor = registros
+                melhor_id = ident
+
+        if melhor:
+            registros_filtrados.extend(melhor)
+
+        for ident, registros in candidatos:
+            if ident != melhor_id:
+                for r in registros:
+                    motivos_remocao[r.id].append("Removido por priorização de genes: outro indivíduo com mais genes")
+
+    return registros_filtrados
+
+def filtrar_maior_fragmento_por_gene_e_voucher(gene_dict):
+    novo_dict = {}
+    for gene, entradas in gene_dict.items():
+        por_voucher = defaultdict(list)
+        for header, seq, original_id in entradas:
+            chave = header  # usa o header_id que contém voucher ou isolate
+            por_voucher[chave].append((header, seq, original_id))
+
+        novo_dict[gene] = []
+        for lista in por_voucher.values():
+            maior = max(lista, key=lambda x: len(x[1]))
+            novo_dict[gene].append(maior)
+    return novo_dict
+
+def fetch_with_retry(ids=None, rettype="gb", retmode="text", **kwargs):
+    global error_queue
+    for tentativa in range(3):
+        try:
+            if ids:
+                with Entrez.efetch(db="nucleotide", id=ids, rettype=rettype, retmode=retmode, **kwargs) as handle:
+                    return list(SeqIO.parse(handle, "genbank"))
+            else:
+                with Entrez.efetch(db="nucleotide", rettype=rettype, retmode=retmode, **kwargs) as handle:
+                    return list(SeqIO.parse(handle, "genbank"))
+        except IncompleteRead:
+            print(f"[WARNING] IncompleteRead, tentativa {tentativa+1}/3...")
+            time.sleep(2)
+        except Exception as e:
+            print(f"[ERROR] Erro inesperado: {e}")
+            error_queue.put(str(e))
+            break
+    return []
+    
+def normalizar_organism(nome):
+    """
+    Remove códigos de campo, números ou siglas após nomes de espécies.
+    Ex: 'Occidozyga cf. laevis ACD 6117' → 'Occidozyga cf. laevis'
+    """
+    import re
+    nome = nome.strip()
+    nome = re.sub(r'\b([A-Z]{2,}[^\s]*|\d+)\b', '', nome)
+    nome = re.sub(r'\s+', ' ', nome).strip()
+    return nome
+    
+def get_normalized_organism(record):
+    organism = record.annotations.get("organism", "")
+    if not organism:
+        for feature in record.features:
+            if feature.type == "source" and "organism" in feature.qualifiers:
+                organism = feature.qualifiers["organism"][0]
+                break
+    return normalizar_organism(organism or "Unknown")
                       
 def download_sequences(genbank_ids, output_base, header_fields, config, genes, query=None, parent=None):
 
@@ -711,48 +852,69 @@ def download_sequences(genbank_ids, output_base, header_fields, config, genes, q
             count = int(search_results["Count"])
             webenv = search_results["WebEnv"]
             query_key = search_results["QueryKey"]
-
+    
             for start in range(0, count, batch_size):
-                with Entrez.efetch(db="nucleotide", rettype="gb", retmode="text", retstart=start, retmax=batch_size, webenv=webenv, query_key=query_key) as handle:
-                    for rec in SeqIO.parse(handle, "genbank"):
-                        try:
-                            seq_string = str(rec.seq).upper()
-                            if not rec.seq or len(seq_string.strip("N")) == 0 or "SEQUENCE CONTENT IS UNDEFINED" in seq_string:
-                                ignored_ids.append(rec.id)
-                                continue
-                            all_records.append(rec)
-                        except Exception:
+                registros = fetch_with_retry(
+                    retstart=start, retmax=batch_size,
+                    webenv=webenv, query_key=query_key
+                )
+                for rec in registros:
+                    try:
+                        seq_string = str(rec.seq).upper()
+                        if not rec.seq or len(seq_string.strip("N")) == 0 or "SEQUENCE CONTENT IS UNDEFINED" in seq_string:
                             ignored_ids.append(rec.id)
                             continue
+                        all_records.append(rec)
+                    except Exception:
+                        ignored_ids.append(rec.id)
+                        continue
                 if parent:
                     progresso = int(((start + batch_size) / count) * 100)
                     progress_var.set(min(progresso, 100))
                     progress_bar.update()
                     parent.update()
+                    
         else:
             for i in range(0, len(genbank_ids), batch_size):
                 chunk = genbank_ids[i:i + batch_size]
-                with Entrez.efetch(db="nucleotide", id=chunk, rettype="gb", retmode="text") as handle:
-                    for rec in SeqIO.parse(handle, "genbank"):
-                        try:
-                            seq_string = str(rec.seq).upper()
-                            if not rec.seq or len(seq_string.strip("N")) == 0 or "SEQUENCE CONTENT IS UNDEFINED" in seq_string:
-                                ignored_ids.append(rec.id)
-                                continue
-                            all_records.append(rec)
-                        except Exception:
+                registros = fetch_with_retry(ids=chunk)
+                for rec in registros:
+                    try:
+                        seq_string = str(rec.seq).upper()
+                        if not rec.seq or len(seq_string.strip("N")) == 0 or "SEQUENCE CONTENT IS UNDEFINED" in seq_string:
                             ignored_ids.append(rec.id)
                             continue
+                        all_records.append(rec)
+                    except Exception:
+                        ignored_ids.append(rec.id)
+                        continue
                 if parent:
                     progresso = int(((i + batch_size) / len(genbank_ids)) * 100)
                     progress_var.set(min(progresso, 100))
                     progress_bar.update()
                     parent.update()
-
+        
+        all_records_orig = all_records.copy()
         min_len = config.get("min_len", 0)
         max_len = config.get("max_len", 999999)
         all_records = [rec for rec in all_records if min_len <= len(rec.seq) <= max_len]
 
+    # ✅ Lógica de priorização baseada em genes mitocondriais
+        usar_prioridade_genes = False
+
+        if config.get("priorizar_mais_genes", False) and "mitochondrial" in (query or "").lower():
+            if not genes.strip():
+                usar_prioridade_genes = True
+            else:
+                num_genes = len([g for g in genes.split(",") if g.strip()])
+                if num_genes > 1:
+                    usar_prioridade_genes = True
+    
+        if usar_prioridade_genes:
+            all_records = filtrar_melhores_individuos_por_especie(
+                all_records, alias_map, genes_desejados, motivos_remocao
+            )
+    
         filtered_records = []
         species_seen = set()
         excel_data = []
@@ -763,52 +925,73 @@ def download_sequences(genbank_ids, output_base, header_fields, config, genes, q
         seen_genes = set()
         seen_headers = set()
         seen_leu_ser = set()
-
+        
         for record in all_records:
-            record_id = record.id  # 🔹 define antes de qualquer uso
-            organism = record.annotations.get("organism", "Unknown")
+            genbank_id = record.id.split(".")[0]
+            record.annotations["original_id"] = genbank_id
+        
+            # 🔧 Recupera 'organism' mesmo se annotations estiver incompleto
+            organism = record.annotations.get("organism", "")
+            if not organism:
+                for feature in record.features:
+                    if feature.type == "source" and "organism" in feature.qualifiers:
+                        organism = feature.qualifiers["organism"][0]
+                        break
+            if not organism:
+                organism = "Unknown"
             
+             # 🔧 Normaliza o nome para remover códigos de voucher
+            organism = normalizar_organism(organism)
+        
             if unique_species and organism in species_seen:
-                motivos_remocao[record_id].append("Duplicata por espécie (unique_species ativado)")
+                motivos_remocao[genbank_id].append("Duplicata por espécie (unique_species ativado)")
                 continue
             species_seen.add(organism)
-
+        
             values = []
             feature_info = {f: "" for f in fields_excel}
             for field in header_fields:
-                val = "Unknown"
+                val = ""
                 for feature in record.features:
                     if feature.type == "source":
-                        val = feature.qualifiers.get(field, ["Unknown"])[0]
+                        val = feature.qualifiers.get(field, [""])[0].strip()
                         break
-                values.append(val.replace(" ", "_"))
-
+                values.append(val.replace(" ", "_") if val else "")
+        
             for feature in record.features:
                 if feature.type == "source":
                     for f in fields_excel:
                         if f in feature.qualifiers:
                             feature_info[f] = feature.qualifiers[f][0]
                     break
-
-            genbank_id_clean = record.id.split(".")[0]
-            record.annotations["original_id"] = genbank_id_clean
-
-            header_id = "_".join(values)
-            if include_id:
-                header_id += f"_{genbank_id_clean}"
-            
+        
+            base_header = "_".join([v for v in values if v]).strip("_")
+            if not base_header:
+                base_header = organism.replace(" ", "_")
+            header_id = f"{base_header}_{genbank_id}" if include_id else base_header
             original_header = header_id
-            suffix = 1
-            while header_id in seen_headers:
-                header_id = f"{original_header}_{suffix}"
-                suffix += 1
-            seen_headers.add(header_id)
-            
+        
+            priorizar_mais_genes = config.get("priorizar_mais_genes", False)
+        
+            # Garante unicidade mesmo sem mostrar o GenBank ID
+            if not priorizar_mais_genes:
+                suffix = 1
+                while header_id in seen_headers:
+                    header_id = f"{original_header}_{genbank_id if include_id else suffix}"
+                    suffix += 1
+                seen_headers.add(header_id)
+            else:
+                seen_headers.add(header_id)
+        
+            # Mostra ou não o GenBank ID no FASTA, dependendo da preferência
+            if not include_id and genbank_id in header_id:
+                header_id = header_id.replace(f"_{genbank_id}", "")
+        
             record.id = header_id
             record.description = ""
-
+        
             genes_encontrados = set()
-
+        
             if extract_all_genes:
                 extrair_genes_geral(
                     record,
@@ -823,26 +1006,26 @@ def download_sequences(genbank_ids, output_base, header_fields, config, genes, q
                     agrupador_ser,
                     seen_leu_ser
                 )
-                    
+        
                 if remover_sobrepos and org_type == "animal_mito":
                     os.makedirs(gene_folder, exist_ok=True)
                     corrigir_sobreposicoes_em_animais(record, gene_dict, alias_map, gene_folder)
-
+        
                 for gene, seqs in gene_dict.items():
                     for head, seq, seq_original_id in seqs:
                         if seq_original_id == record.annotations["original_id"]:
                             genes_encontrados.add(gene)
                             break
-
+        
             if not extract_all_genes or genes_encontrados:
                 filtered_records.append(record)
                 excel_data.append((record.annotations["original_id"], feature_info))
             else:
-                motivos_remocao[record_id].append("Falha na extração de genes: nenhum gene extraído")
-                continue
+                motivos_remocao[genbank_id].append("Falha na extração de genes: nenhum gene extraído")
+                continue 
 
-#        if extract_all_genes and not genes_desejados:
-#            genes_desejados = set(gene_dict.keys())
+        if config.get("priorizar_mais_genes", False):
+            gene_dict = filtrar_maior_fragmento_por_gene_e_voucher(gene_dict)
             
         if extract_all_genes and not genes:
             genes_desejados = set(gene_dict.keys())
@@ -926,14 +1109,25 @@ def download_sequences(genbank_ids, output_base, header_fields, config, genes, q
         with open(log_file, "w") as lf:
             lf.write(f"Arquivo FASTA gerado: {fasta_file}\n")
             lf.write(f"Arquivo Excel gerado: {excel_file}\n")
-            lf.write(f"Total de sequências encontradas (antes dos filtros): {len(all_records)}\n")
+            lf.write(f"Total de sequências encontradas (antes dos filtros): {len(all_records_orig)}\n")
             lf.write(f"Total de sequências salvas: {len(filtered_records)}\n")
             lf.write("\n")
             if motivos_remocao:
-                lf.write(f"🔎 Sequências removidas pelos filtros aplicados: {len(all_records) - len(filtered_records)}\n")
+                lf.write(f"🔎 Sequências removidas pelos filtros aplicados: {len(all_records_orig) - len(filtered_records)}\n")
+                # Agrupar GenBank IDs por motivo
+                motivos_agrupados = defaultdict(list)
                 for rec_id, motivos in motivos_remocao.items():
-                    motivos_str = "; ".join(motivos)
-                    lf.write(f"{rec_id}: {motivos_str}\n")
+                    for motivo in motivos:
+                        motivos_agrupados[motivo].append(rec_id)
+                        
+                # Escrever motivos agrupados
+                for motivo, ids in motivos_agrupados.items():
+                    ids_ordenados = sorted(set(ids))
+                    lf.write(f"{motivo}: {', '.join(ids_ordenados)}\n")
+                
+               # for rec_id, motivos in motivos_remocao.items():
+                #    motivos_str = "; ".join(motivos)
+                 #   lf.write(f"{rec_id}: {motivos_str}\n")
             else:
                 lf.write("✅ Nenhuma sequência foi removida pelos filtros.\n")
             lf.write("\n")
@@ -952,8 +1146,9 @@ def download_sequences(genbank_ids, output_base, header_fields, config, genes, q
         if extract_all_genes and len(gene_dict) > 1 and len(all_records) > 1:
             gerar_excel_metadados_por_gene(gene_dict, excel_data, header_fields, output_base)
 
-        if query and " " in query and not (" OR " in query or "," in query):
-            gerar_excel_matriz_gene_vs_amostra(gene_dict, excel_data, header_fields, output_base)
+        #if query and " " in query and not (" OR " in query or "," in query):
+        if extract_all_genes and len(gene_dict) > 1 and len(all_records) > 1:
+            gerar_excel_matriz_gene_vs_amostra(gene_dict, excel_data, header_fields, output_base, config)
 
     except Exception as e:
         if loading_win:
@@ -1002,6 +1197,7 @@ def iniciar_busca():
                 "extract_all_genes": var_extract_all_genes.get(),
                 "remover_sobrepos": var_remover_sobrepos.get(),
                 "unique_species": var_unique_species.get(),
+                "priorizar_mais_genes": chkvar_priorizar_genes.get(),
                 "min_len": int(entry_min_len.get() or 0),
                 "max_len": int(entry_max_len.get() or 999999),
                 "log_ausentes": var_log_ausentes.get(),
@@ -1098,6 +1294,7 @@ def iniciar_busca():
                 "extract_all_genes": var_extract_all_genes.get(),
                 "remover_sobrepos": var_remover_sobrepos.get(),
                 "unique_species": var_unique_species.get(),
+                "priorizar_mais_genes": chkvar_priorizar_genes.get(),
                 "min_len": int(entry_min_len.get() or 0),
                 "max_len": int(entry_max_len.get() or 999999),
                 "log_ausentes": var_log_ausentes.get(),
@@ -1109,13 +1306,23 @@ def iniciar_busca():
             ).start()
     else:
         messagebox.showinfo("Sem resultados", "Nenhum ID encontrado para a busca.")
-        
+
+def checar_erros_gui_loop(root):
+    try:
+        while True:
+            erro = error_queue.get_nowait()
+            messagebox.showerror("Erro", f"Erro ao processar sequências: {erro}")
+    except queue.Empty:
+        pass
+    root.after(500, lambda: checar_erros_gui_loop(root))
+           
 # Interface Gráfica
 root = tk.Tk()
 if os.name == "nt":
     root.iconbitmap("pynnotate.ico")
 root.title("Pynnotate_v1")
 root.geometry("720x820")
+checar_erros_gui_loop(root)
 
 Label(root, text="1) Selecionar a biblioteca genômica", font=("Arial", 14, "bold")).pack(anchor="center", pady=(0, 3), padx=10)
 
@@ -1194,6 +1401,10 @@ var_unique_species = BooleanVar(value=False)
 chk_unique_species = tk.Checkbutton(root, text="Incluir apenas 1 indivíduo por espécie", variable=var_unique_species)
 chk_unique_species.pack()
 
+chkvar_priorizar_genes = BooleanVar(value=False)
+chk_priorizar_genes = tk.Checkbutton(root, text="Priorizar indivíduo com mais genes (mitocondrial)", variable=chkvar_priorizar_genes, state="disabled")
+chk_priorizar_genes.pack()
+
 tk.Label(root, text="🔢 Tamanho mínimo da sequência (bp) [opcional]:").pack()
 entry_min_len = Entry(root, width=20)
 entry_min_len.pack()
@@ -1256,6 +1467,15 @@ def atualizar_extracao_opcoes():
     else:
         chk_remover_sobrepos.pack_forget()
         chk_log_ausentes.pack_forget()
+     
+# Ativar/desativar automaticamente quando o checkbox "Gene mitocondrial" for alterado 
+def atualizar_estado_priorizar_genes(*args):
+    if var_mito.get():
+        chk_priorizar_genes.config(state="normal")
+    else:
+        chk_priorizar_genes.config(state="disabled")
+        chkvar_priorizar_genes.set(False)  # também desmarca se for desativado
+var_mito.trace_add("write", atualizar_estado_priorizar_genes)
 
 tk.Label(root, text="5) Definir nome base da pasta de saída (ex: 16S_Leptodactylus):",font=("Arial", 14, "bold")).pack()
 entry_saida = tk.Entry(root, width=40)
