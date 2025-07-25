@@ -5,7 +5,7 @@
 Desenvolvido tanto para pesquisadores avançados quanto para professores e alunos iniciantes em bioinformática, filogenia e genética molecular, pynnotate oferece uma interface amigável que não exige conhecimento prévio em programação.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Licença][![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 ![Versão](https://img.shields.io/github/v/release/fernandacaron/pynnotate?logo=github)
 
@@ -47,9 +47,9 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 - 🧠 Extração automática de genes com agrupamento por sinônimos
 - ✂️ Filtros por tamanho da sequência e opções para priorizar amostras, ideal para diferentes níveis de análise
 - Modos de filtragem adaptados:
-  - 🌐 Modo irrestrito: inclui todas as sequências encontradas
-  - 🌱 Modo flexível (unique_species = True): permite múltiplas sequências por espécie se genes forem diferentes
-  - 🔒 Modo estrito (prioritize_more_genes = True): inclui apenas a melhor sequência por espécie, facilitando análises simples
+  🌐 Modo irrestrito: inclui todas as sequências encontradas
+  🌱 Modo flexível (unique_species = True): permite múltiplas sequências por espécie se genes forem diferentes
+  🔒 Modo estrito (prioritize_more_genes = True): inclui apenas a melhor sequência por espécie, facilitando análises simples
 - 🧬 Suporte para mitogenomas, cloroplastos e genomas nucleares
 - 👓 Identificação automática de múltiplas cópias de tRNA-Leu e tRNA-Ser, com agrupamento por posição genômica
 - 🖼️ Interface gráfica intuitiva para configuração, execução e acompanhamento dos processos sem necessidade de linha de comando
@@ -61,7 +61,8 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 
 ## 🖼️ Interface
 
-![screenshot opcional aqui]
+![Interface do Pynnotate](interface.png)
+
 
 ---
 
@@ -117,7 +118,7 @@ Executando com o arquivo YAML:
 python pynnotate.py -c examples/config.yaml
 ```
 
-### Notas importantes:
+#### Notas importantes:
 
 O arquivo YAML agrupa todas as configurações, evitando a necessidade de múltiplos argumentos na linha de comando.
 
@@ -135,7 +136,7 @@ python pynnotate.py -h
 
 Pynnotate é uma ferramenta de linha de comando que aceita vários argumentos para personalizar a busca, download e extração de sequências do GenBank. Abaixo está a descrição detalhada de cada argumento disponível no código atual.
 
-#### *Argumentos obrigatórios*
+#### **Argumentos obrigatórios**
 
 ##### `-c` ou `--config`
 
@@ -143,27 +144,27 @@ Descrição: Caminho para o arquivo de configuração YAML que contém todas as 
 
 > Nota: O arquivo YAML agrupa todas as configurações, facilitando o uso sem múltiplos argumentos na linha de comando. Um exemplo está disponível na pasta examples/.
 
-### *Argumentos obrigatórios no arquivo YAML*
+#### **Argumentos obrigatórios no arquivo YAML**
 
 Para rodar o Pynnotate corretamente via terminal, é necessário fornecer um arquivo de configuração YAML com pelo menos os seguintes campos obrigatórios:
 
-#### `-e` ou `--email`
+##### `-e` ou `--email`
 
 Descrição: Seu e-mail válido, exigido pelo NCBI Entrez para identificação e acesso ao GenBank.
 
-#### `-o` ou `--output`
+##### `-o` ou `--output`
 
 Descrição: Diretório onde os arquivos de saída serão salvos (nome da pasta também pode ser provido com argumento `--folder`, mas não é obrigatório). 
 
-#### `-t` ou `--type`
+##### `-t` ou `--type`
 
 Descrição: Tipo de genoma/organismo para determinar dicionário de sinônimos. Valores aceitos: *animal_mito, plant_mito, plant_chloro, other*.
 
-#### `--filter-mode`
+##### `--filter-mode`
 
 Descrição: Define como as sequências serão filtradas por espécie. Este parâmetro é essencial para controlar a redundância e a estrutura do seu conjunto de dados.
 
-*Valores aceitos:*
+**Valores aceitos:**
 
 🌐 Unconstrained: Inclui todas as sequências disponíveis, independentemente da redundância. Útil quando você deseja explorar ou curar manualmente todos os registros.
 
@@ -171,104 +172,99 @@ Descrição: Define como as sequências serão filtradas por espécie. Este par�
 
 🔒 Strict: Inclui apenas uma sequência por espécie, priorizando aquela com o maior número de genes presentes no dicionário principal ou no dicionário fornecido pelo usuário.
 
-> Observações importantes:
+**⚠️ ATENÇÃO**: No modo strict, o filtro considera os genes listados no dicionário de sinônimos padrão e/ou no dicionário fornecido pelo usuário.
 
-⚠️ No modo strict, o filtro considera os genes listados no dicionário de sinônimos padrão e/ou no dicionário fornecido pelo usuário.
+**⚠️ ATENÇÃO**: Quando o modo unconstrained é usado em combinação com a extração de genes separadamente (`--extraction`), todas as sequências correspondentes aos genes selecionados serão baixadas, mesmo que haja múltiplos registros por espécie.
 
-⚠️ Quando o modo unconstrained é usado em combinação com a extração de genes separadamente (`--extraction`), todas as sequências correspondentes aos genes selecionados serão baixadas, mesmo que haja múltiplos registros por espécie.
+##### Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados
 
-
-Além destes, você deve incluir pelo menos um dos dois parâmetros para indicar a busca dos dados:
-
-#### `-a` ou `--accession` 
+##### `-a` ou `--accession` 
 
 Descrição: Lista de IDs do GenBank (accessions) para baixar. Pode ser null se usar algum argumento da *query*.
 
 > Nota: Use apenas se quiser buscar por IDs específicos em vez de usar uma query.
 
-#### Algum termo de busca adicionado na query: `-g`, `--genes`, `--organism`,  `--publication` ou `--additional`. Veja descrição destes argumento abaixo.
+#### **Argumentos opcionais (configuração via YAML ou linha de comando)**
 
-### *Argumentos Opcionais (Configuração via YAML ou linha de comando)*
-
-#### `-g` ou `--genes`
+##### `-g` ou `--genes`
 
 Descrição: Lista separada por vírugla dos genes para procurar e baixar (e.g., COI, CYTB, ATP6).
 
 > Nota: Extrai só os genes listados, caso contrário extrai todos conhecidos.
 
-#### `-organism`
+##### `-organism`
 
 Descrição: Organismos para procurar e baixar (e.g., espécies, família).
 
-#### `-p` ou `--publication`
+##### `-p` ou `--publication`
 
 Descrição: Termo de publicação (e.g., título, autores, ano).
 
-#### `--additional`
+##### `--additional`
 
 Descrição: Qualquer termo de busca adicional (e.g., NOT sp).
 
-#### `--mitochondrialgene`
+##### `--mitochondrialgene`
 
 Descrição: Refinar termos de busca para "genes mitocondriais".
 
-#### `--mitogenome`
+##### `--mitogenome`
 
 Descrição: Refinar termos de busca para "mitogenomas".
 
-#### `--chloroplast`
+##### `--chloroplast`
 
 Descrição: Refinar termos de busca para "cloroplasto".
 
-#### `--annotated`
+##### `--annotated`
 
 Descrição: Excluir registros não-anotados.
 
-#### `--header`
+##### `--header`
 
 Descrição: Campos para cabeçalho das sequências (campos do GenBank).
 
-#### `--genbankid`
+##### `--genbankid`
 
 Descrição: Incluir GenBank ID nos cabeçalhos fasta.
 
-#### `--prioritize`
+##### `--prioritize`
 
 Descrição: Priorizar indivíduos com mais genes (válido para mitocondriais)
 
-#### `--add_synonyms`
+##### `--add_synonyms`
 
 Descrição: Sinônimos adicionais de nomes de genes em formato JSON. O pynnotate já inclui um dicionário interno de sinônimos de nomes de genes para auxiliar na extração. Você pode fornecer sinônimos adicionais para genes não reconhecidos automaticamente. Recomendamos executar o programa primeiro para identificar quaisquer sinônimos de genes não reconhecidos. Adicione quaisquer sinônimos ausentes aqui para melhorar a correspondência.
 
-> ⚠️ ATENÇÃO: Ao selecionar o tipo de genoma e adicionar sinônimos, eles serão incorporados ao dicionário interno para aquele tipo específico de genoma. No entanto, se o tipo de genoma selecionado for 'other', apenas os sinônimos fornecidos pelo usuário serão usados.
+**⚠️ ATENÇÃO**: Ao selecionar o tipo de genoma e adicionar sinônimos, eles serão incorporados ao dicionário interno para aquele tipo específico de genoma. No entanto, se o tipo de genoma selecionado for 'other', apenas os sinônimos fornecidos pelo usuário serão usados.
 
-#### `--min_bp`
+##### `--min_bp`
 
 Descrição: Define o comprimento mínimo permitido para uma sequência para ser mantida.
 
-#### `--max_bp`
+##### `--max_bp`
 
 Descrição: Define o comprimento máximo permitido para uma sequência para ser mantida.
 
-#### `--extraction`
+##### `--extraction`
 
 Descrição: Booleano. Se True, extrai todos os genes separadamente, agrupando diferentes indivíduos/espécies nos respactivos arquivos de cada gene.
 
-#### `--overlap`
+##### `--overlap`
 
 Descrição: Arrumar sobreposição entre genes extraídos.
 
-#### `--logmissing`
+##### `--logmissing`
 
 Descrição: Gerar log de espécies faltantes por amostra (útil para mitogenomas).
 
-#### `--folder`
+##### `--folder`
 
 Descrição: Nome do pasta para criar dentro da pasta de saída (será criada automaticamente com nome pré-definido se argumento não existir).
 
-### *Outras Opções*
+#### **Outras opções**
 
-#### `-h` ou `--help`
+##### `-h` ou `--help`
 
 Descrição: Mostra a ajuda com a lista completa dos argumentos e suas descrições.
 
@@ -279,15 +275,15 @@ Descrição: Mostra a ajuda com a lista completa dos argumentos e suas descriç�
 
 Após a execução, o Pynnotate cria automaticamente um conjunto de arquivos no diretório de saída especificado (`--output`). 
 
-output_folder/
-├── sequences.fasta
-├── log.txt
-├── metadata.xlsx
-├── genes_matrix.xlsx
-└── genes/
-    ├── COI.fasta
-    ├── CYTB.fasta
-    └── ...
+output_folder/  
+├── sequences.fasta  
+├── log.txt  
+├── metadata.xlsx  
+├── genes_matrix.xlsx  
+└── genes/  
+    ├── COI.fasta  
+    ├── CYTB.fasta  
+    └── ...  
 
 1. *sequences.fasta*: Contêm as sequências extraídas sem separar por genes.
 2. *log.txt*: Relatório da execução do programa, útil para depuração e rastreabilidade. Inclui informações sobre os registros processados, problemas encontrados e decisões tomadas durante a filtragem.
