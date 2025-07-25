@@ -5,19 +5,19 @@
 Desenvolvido tanto para pesquisadores avançados quanto para professores e alunos iniciantes em bioinformática, filogenia e genética molecular, pynnotate oferece uma interface amigável que não exige conhecimento prévio em programação.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Licença](https://img.shields.io/github/license/fernandacaron/pynnotate)
+![Licença][![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 ![Versão](https://img.shields.io/github/v/release/fernandacaron/pynnotate?logo=github)
 
 1.  [✨ Funcionalidades](#-funcionalidades)
-2.  [🖼️ Interface](#-interface)
+2.  [🖼️ Interface](#%EF%B8%8F-interface)
 3.  [🛠️ Requisitos](#-requisitos)
 4.  [💾 Instalação](#-instalação)
-5.  [🧪 Exemplo de uso](#-exemplodeuso)
-6.  [⚙️ Detalhes dos Argumentos](#-detalhesdosargumentos)
-7.  [🧾 Arquivos gerados](#-arquivosgerados)
-8.  [🤝 Contribuição](#-contribuicao)
-9.  [📣 Citação](#-citacao)
+5.  [🧪 Exemplo de uso](#-exemplo-de-uso-versão-terminal)
+6.  [⚙️ Detalhes dos Argumentos](%EF%B8%8F-detalhes-dos-argumentos)
+7.  [🧾 Arquivos gerados](#-arquivos-gerados)
+8.  [🤝 Contribuição](#-contribuição)
+9.  [📣 Citação](#-citação)
 
 
 ---
@@ -67,7 +67,7 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 
 ## 💾 Instalação
 
-### Versão Terminal (linha de comando)
+### Versão terminal
 
 A versão terminal do Pynnotate é recomendada para usuários que preferem usar a ferramenta via prompt de comando ou integrar em pipelines automatizados.
 
@@ -87,7 +87,7 @@ pip install .
 python pynnotate.py --help
 ```
 
-### Versão Gráfica (GUI)
+### Versão gráfica (GUI)
 
 Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, empacotada em um arquivo .app para os principais sistemas operacionais.
 
@@ -98,7 +98,16 @@ Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, emp
 
 ---
 
-## 🧪 Exemplo de uso (Versão Terminal)
+## 🧪 Exemplo de uso
+
+### Versão gráfica
+
+1. Defina um gene (ex: COI) e um organismo (ex: Anura)
+2. Clique em "💾 Search and download sequences"
+3. O programa irá buscar, baixar e extrair os dados automaticamente
+4. Veja os arquivos gerados no local escolhido
+
+### Versão terminal
 
 O Pynnotate utiliza um arquivo de configuração em formato YAML para facilitar a configuração das opções. Um arquivo de exemplo está disponível na pasta examples/ do repositório, chamado config.yaml.
 
@@ -126,15 +135,15 @@ python pynnotate.py -h
 
 Pynnotate é uma ferramenta de linha de comando que aceita vários argumentos para personalizar a busca, download e extração de sequências do GenBank. Abaixo está a descrição detalhada de cada argumento disponível no código atual.
 
-### *Argumentos Obrigatórios*
+#### *Argumentos obrigatórios*
 
-#### `-c` ou `--config`
+##### `-c` ou `--config`
 
 Descrição: Caminho para o arquivo de configuração YAML que contém todas as opções para rodar o Pynnotate.
 
 > Nota: O arquivo YAML agrupa todas as configurações, facilitando o uso sem múltiplos argumentos na linha de comando. Um exemplo está disponível na pasta examples/.
 
-### *Argumentos Obrigatórios no arquivo YAML*
+### *Argumentos obrigatórios no arquivo YAML*
 
 Para rodar o Pynnotate corretamente via terminal, é necessário fornecer um arquivo de configuração YAML com pelo menos os seguintes campos obrigatórios:
 
