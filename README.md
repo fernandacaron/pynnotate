@@ -55,6 +55,7 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 - 🖼️ Interface gráfica intuitiva para configuração, execução e acompanhamento dos processos sem necessidade de linha de comando
 - 📂 Geração completa de arquivos FASTA, planilhas Excel e logs detalhados, prontos para uso em aulas ou pesquisas
 
+
 ---
 
 
