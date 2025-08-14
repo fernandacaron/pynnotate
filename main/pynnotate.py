@@ -424,7 +424,7 @@ def metadata_by_gene(gene_dict, excel_data, fields_excel, output_dir, all_record
 					meta["organism"] = standardize_organism(meta["organism"])
 				ws.append([original_id] + [meta.get(f, "") for f in fields_excel])
 
-	out_path = f"{output_dir}/metadata.xlsx"
+	out_path = os.path.join(output_dir, "metadata.xlsx")
 	wb.save(out_path)
 
 def metadata_gene_vs_sample(gene_dict, excel_data, header_fields, output_dir, config):
@@ -497,12 +497,11 @@ def metadata_gene_vs_sample(gene_dict, excel_data, header_fields, output_dir, co
 			row = [meta[f] for f in header_fields] + [gene_map[g] for g in genes]
 			ws.append(row)
 
-	out_path = f"{output_dir}/genes_matrix.xlsx"
+	out_path = os.path.join(output_dir, "genes_matrix.xlsx")
 	wb.save(out_path)
 
 def make_query(email, alias_map, org_type, genes, organisms, mito, mitogenome, chloroplast, title, additional, min_len, max_len, add_unverified_exclusion):
 
-	from tkinter import messagebox
 	import logging
 
 	# Generates gene synonyms
@@ -573,38 +572,92 @@ def make_query(email, alias_map, org_type, genes, organisms, mito, mitogenome, c
 		ids = search_genbank(email, query, retmax=999999)
 	except Exception as e:
 		try:
+			import tkinter
+			from tkinter import messagebox
 			root = tkinter._default_root
 			if root is not None:
-				messagebox.showerror("Error fetching", f"An error occurred: {e}")
+				report_message(f"An error occurred: {e}", "error", "Error", root)
 			else:
 				raise RuntimeError
 		except:
-			logging.error(f"An error occurred: {e}")
+			report_message(f"An error occurred: {e}", "error", "Error")
 			ids = []
 	
 	return ids, query
 
-def report_message(msg: str, level: str = "info", title: str = None, root=None):
-	
-	from tkinter import messagebox
+def report_message(msg, level="info", title=None, root=None):
+
 	import logging
 
 	title = title or level.capitalize()
-
 	if root is not None:
-		if level == "error":
-			messagebox.showerror(title, msg)
-		elif level == "warning":
-			messagebox.showwarning(title, msg)
-		else:
-			messagebox.showinfo(title, msg)
+		try:
+			import tkinter
+			import tkinter.messagebox as messagebox
+			if level == "error":
+				messagebox.showerror(title, msg)
+			elif level == "warning":
+				messagebox.showwarning(title, msg)
+			else:
+				messagebox.showinfo(title, msg)
+			return
+		except Exception:
+			pass 
+	
+	if level == "error":
+		logging.error(f"{title}: {msg}")
+	elif level == "warning":
+		logging.warning(f"{title}: {msg}")
 	else:
-		if level == "error":
-			logging.error(msg)
-		elif level == "warning":
-			logging.warning(msg)
-		else:
-			logging.info(msg)
+		logging.info(f"{title}: {msg}")
+
+def sanitize_filename(filename):
+
+	import re
+	import platform
+	
+	if not filename:
+		return "unnamed"
+	
+	invalid_chars = r'[<>:"|?*\\\/]'
+	filename = re.sub(invalid_chars, '_', filename)
+	
+	if platform.system() == 'Windows':
+		reserved = {'CON', 'PRN', 'AUX', 'NUL', 'COM1', 'COM2', 'COM3', 
+				   'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',
+				   'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 
+				   'LPT7', 'LPT8', 'LPT9'}
+		
+		name_only = filename.split('.')[0].upper()
+		if name_only in reserved:
+			filename = f"_{filename}"
+	
+	if len(filename) > 200:
+		name, ext = filename.rsplit('.', 1) if '.' in filename else (filename, '')
+		filename = name[:200-len(ext)-1] + ('.' + ext if ext else '')
+	
+	return filename.strip()
+
+def ensure_writable_directory(path):
+
+	import os
+	
+	try:
+		os.makedirs(path, exist_ok=True)
+		
+		test_file = os.path.join(path, '.write_test')
+		try:
+			with open(test_file, 'w') as f:
+				f.write('test')
+			os.remove(test_file)
+			return True, ""
+		except Exception as e:
+			return False, f"Cannot write to directory: {e}"
+			
+	except PermissionError:
+		return False, "Permission denied to create directory"
+	except Exception as e:
+		return False, f"Cannot create directory: {e}"
 
 def begin_search(config, root=None):
 
@@ -613,8 +666,6 @@ def begin_search(config, root=None):
 	import logging
 	import os
 	import re
-	import tkinter as tk
-	from tkinter import messagebox
 
 	logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(message)s')
 
@@ -630,6 +681,8 @@ def begin_search(config, root=None):
 	fields = config["fields"]
 	output_name = config["output_name"]
 	folder_name = config["folder_name"]
+	if folder_name:
+		folder_name = sanitize_filename(folder_name)
 	include_id = config["include_id"]
 	mito = config["mito"]
 	mitogenome = config["mitogenome"]
@@ -651,7 +704,6 @@ def begin_search(config, root=None):
 			report_message("⚠️  '--overlap' ignored because '--extraction' was not enabled.", "warning", "Warning")
 		if logmissing:
 			report_message("⚠️  '--logmissing' ignored because '--extraction' was not enabled.", "warning", "Warning")
-		overlap = False
 		overlap = False
 	elif org_type != "animal_mito":
 		if overlap:
@@ -715,15 +767,21 @@ def begin_search(config, root=None):
 	time_string = datetime.now().strftime("%Hh%Mm%Ss").lower()
 	folder = output_name if isinstance(output_name, str) else output_name[0]
 
+	can_write, error_msg = ensure_writable_directory(folder)
+	if not can_write:
+		report_message(f"Cannot create output directory: {error_msg}", "error", "Error", root)
+		return
+
 	if folder_name:
-		output_dir = f"{folder}/{folder_name}/"
+		output_dir = os.path.join(folder, folder_name)
 	else:
-		output_dir = f"{folder}/pynnotate_{date_string}_{time_string}/"
+		output_dir = os.path.join(folder, f"pynnotate_{date_string}_{time_string}")
 
 	os.makedirs(output_dir, exist_ok=True)
 
 	if ids_text:
 		if root is not None:
+			from tkinter import messagebox
 			ids = [i.strip() for i in re.split(r"[\s,]+", ids_text) if i.strip()]
 			proceed_man = messagebox.askyesno("Confirmation", f"🔢 {len(ids)} IDs provided manually.\n\nDo you want to start the download?")
 		else:
@@ -763,6 +821,7 @@ def begin_search(config, root=None):
 
 	if ids:
 		if root is not None:
+			from tkinter import messagebox
 			proceed_down = messagebox.askyesno("Records found", f"🔢 {len(ids)} records found.\n\nDo you want to start downloading?")
 		else:
 			response_down = input(f"🔢 {len(ids)} records found.\n\nDo you want to start downloading? (y/n): ")
@@ -793,7 +852,6 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 
 	import os
 	from tqdm import tqdm
-	from tkinter import ttk
 	from Bio import Entrez, SeqIO
 	from openpyxl import Workbook
 	from collections import defaultdict
@@ -863,12 +921,16 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 
 	try:
 		os.makedirs(output_dir, exist_ok=True)
-		gene_folder = f"{output_dir}genes"
 
-		fasta_file = f"{output_dir}sequences.fasta"
-		excel_file = f"{output_dir}metadata.xlsx"
-		log_file = f"{output_dir}log.txt"
-		#processing_file = f"{output_dir}/processing_log.txt"
+		can_write, error_msg = ensure_writable_directory(output_dir)
+		if not can_write:
+			report_message(f"Output directory problem: {error_msg}", "error", "Error", root)
+			return
+
+		gene_folder = os.path.join(output_dir, "genes")
+		fasta_file = os.path.join(output_dir, "sequences.fasta")
+		excel_file = os.path.join(output_dir, "metadata.xlsx")
+		log_file = os.path.join(output_dir, "log.txt")
 
 		if root is not None:
 			loading_win = None
@@ -1099,10 +1161,10 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 					grouper_leu,
 					grouper_ser,
 					seen_leu_ser,
-					species_to_genes,
-					organism,
 					unique_species,
-					prioritize_more_genes
+					prioritize_more_genes,
+					species_to_genes,
+					organism
 				)
 				
 				if delete_overlap and org_type == "animal_mito":
@@ -1133,24 +1195,24 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 			genes_selected = set(gene_dict.keys())
 
 		if filtered_records:
-			with open(fasta_file, "w") as f_out:
+			with open(fasta_file, "w", encoding='utf-8', newline='\n') as f_out:
 				SeqIO.write(filtered_records, f_out, "fasta")
 
 		for tag, entries in grouper_leu.items():
 			os.makedirs(gene_folder, exist_ok=True)
 			path = os.path.join(gene_folder, f"{tag}.fasta")
-			with open(path, "w") as out:
+			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
 					out.write(f">{header}\n{seq}\n")
 		 
 		for tag, entries in grouper_ser.items():
 			os.makedirs(gene_folder, exist_ok=True)
 			path = os.path.join(gene_folder, f"{tag}.fasta")
-			with open(path, "w") as out:
+			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
 					out.write(f">{header}\n{seq}\n")
 
-		with open(log_file, "w") as lf:
+		with open(log_file, "w", encoding='utf-8', newline='\n') as lf:
 			lf.write("PYNNOTATE\n")
 			lf.write("\n")
 			lf.write(f"User email: {email}\n")
@@ -1193,8 +1255,9 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 				for gene in sorted(gene_dict):
 					entries = gene_dict[gene]
 					os.makedirs(gene_folder, exist_ok=True)
-					path = f"{gene_folder}/{gene}.fasta"
-					with open(path, "w") as out:
+					safe_gene_name = sanitize_filename(gene)
+					path = os.path.join(gene_folder, f"{safe_gene_name}.fasta")
+					with open(path, "w", encoding='utf-8', newline='\n') as out:
 						for head, seq, *_ in entries:
 							out.write(f">{head}\n{seq}\n")
 					lf.write(f"{gene}: {len(entries)} extracted sequences\n")

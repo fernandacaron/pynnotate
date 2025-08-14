@@ -57,7 +57,7 @@ root = tk.Tk()
 if os.name == "nt":  # Windows
     root.iconbitmap("logo.ico")
 else:
-    img = tk.PhotoImage(file="@Pynnotate_v1.0/logo_transparente.png")
+    img = tk.PhotoImage(file=os.path.join("@Pynnotate_v1.0", "logo_transparente.png"))
     root.iconphoto(True, img)
 root.title("Pynnotate v1.0")
 #root.geometry("650x700")
@@ -125,7 +125,7 @@ def create_centered_frame():
 # Frame 0
 frame0, content0 = create_centered_frame()
 
-logo_img = Image.open("@Pynnotate_v1.0/logo_transparente.png")
+logo_img = Image.open(os.path.join("@Pynnotate_v1.0", "logo_transparente.png"))
 logo_img = logo_img.resize((200, 200))
 logo_photo = ImageTk.PhotoImage(logo_img)
 

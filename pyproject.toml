@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+pynnotate = "pynnotate.main_terminal:main"
+
+[project]
+name = "pynnotate"
+version = "1.0"
+description = "Pynnotate is a tool for searching, downloading, and automatically annotating genetic sequences from GenBank"
+authors = [
+    { name="Fernanda S. Caron", email="fernandadesouzacaron@gmail.com" },
+    { name="Felipe de Medeiros Magalhães" },
+    { name="Matheus Salles" },
+    { name="Fabricius M. C. B. Domingos" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = [
+    "biopython",
+    "pyyaml",
+    "tqdm",
+    "openpyxl"
+]
+requires-python = ">=3.8"

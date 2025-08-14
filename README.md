@@ -1,78 +1,61 @@
-
 # 🧬 Pynnotate
 
-**Pynnotate** é uma ferramenta gráfica (GUI) em Python para busca, download e anotação automática de sequências genéticas no GenBank.
-Desenvolvido tanto para pesquisadores avançados quanto para professores e alunos iniciantes em bioinformática, filogenia e genética molecular, pynnotate oferece uma interface amigável que não exige conhecimento prévio em programação.
+**Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank.  
+Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, Pynnotate offers a user-friendly interface that requires no prior programming knowledge.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-[![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Status](https://img.shields.io/badge/status-in%20development-orange)
-![Versão](https://img.shields.io/github/v/release/fernandacaron/pynnotate?logo=github)
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  
+[![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
-1.  [✨ Funcionalidades](#-funcionalidades)
-2.  [🖼️ Interface](#%EF%B8%8F-interface)
-3.  [🛠️ Requisitos](#-requisitos)
-4.  [💾 Instalação](#-instalação)
-5.  [🧪 Exemplo de uso](#-exemplo-de-uso-versão-terminal)
-6.  [⚙️ Detalhes dos Argumentos](%EF%B8%8F-detalhes-dos-argumentos)
-7.  [🧾 Arquivos gerados](#-arquivos-gerados)
-8.  [🤝 Contribuição](#-contribuição)
-9.  [📣 Citação](#-citação)
-
+1.  [✨ Features](#-features)  
+2.  [🛠️ Requirements](#-requirements)  
+3.  [💾 Installation](#-installation)  
+4.  [🧪 Usage example](#-usage-example---terminal-version)  
+5.  [⚙️ Argument details](#%EF%B8%8F-argument-details)  
+6.  [🧾 Generated files](#-generated-files)  
+7.  [🤝 Contributing](#-contributing)  
+8.  [📣 Citation](#-citation)  
 
 ---
 
-
-## 👥 Autores
+## 👥 Authors
 
 **Fernanda de Souza Caron**  
-Pesquisadora de doutorado, PPG Ecologia e Conservação (UFPR)
+PhD researcher, PPG Ecology and Conservation (UFPR)
 
 **Felipe de Medeiros Magalhães**  
-Pesquisador Pós-doc, Universidade Federal da Paraíba (UFPB)  
+Postdoctoral researcher, Federal University of Paraíba (UFPB)
 
 **Matheus Salles**  
-Pesquisador de doutorado, PPG Zoologia (UFPR)
+PhD researcher, PPG Zoology (UFPR)
 
 **Fabricius M. C. B. Domingos**  
-Pesquisador e professor, PPG Zoologia (UFPR)
-
-
----
-
-
-## ✨ Funcionalidades
-
-- 🔍 Busca simples por termos livres ou IDs específicos no GenBank
-- 🧠 Extração automática de genes com agrupamento por sinônimos
-- ✂️ Filtros por tamanho da sequência e opções para priorizar amostras, ideal para diferentes níveis de análise
-- Modos de filtragem adaptados:  
-  🌐 Modo irrestrito: inclui todas as sequências encontradas  
-  🌱 Modo flexível (unique_species = True): permite múltiplas sequências por espécie se genes forem diferentes  
-  🔒 Modo estrito (prioritize_more_genes = True): inclui apenas a melhor sequência por espécie, facilitando análises simples  
-- 🧬 Suporte para mitogenomas, cloroplastos e genomas nucleares
-- 👓 Identificação automática de múltiplas cópias de tRNA-Leu e tRNA-Ser, com agrupamento por posição genômica
-- 🖼️ Interface gráfica intuitiva para configuração, execução e acompanhamento dos processos sem necessidade de linha de comando
-- 📂 Geração completa de arquivos FASTA, planilhas Excel e logs detalhados, prontos para uso em aulas ou pesquisas
-
+Researcher and lecturer, PPG Zoology (UFPR)
 
 ---
 
+## ✨ Features
 
-## 🖼️ Interface
-
-![Interface do Pynnotate](interface.png)
-
+- 🔍 Simple search by free terms or specific IDs in GenBank
+- 🧠 Automatic gene extraction with synonym grouping
+- ✂️ Sequence length filters and options to prioritise samples, ideal for different analysis levels
+- Filtering modes:  
+  🌐 Unconstrained mode: includes all sequences found  
+  🌱 Flexible mode (`unique_species = True`): allows multiple sequences per species if genes differ  
+  🔒 Strict mode (`prioritize_more_genes = True`): includes only the best sequence per species, ideal for simple analyses  
+- 🧬 Supports mitogenomes, chloroplasts, and nuclear genomes
+- 👓 Automatic identification of multiple copies of tRNA-Leu and tRNA-Ser, with grouping by genomic position
+- 🖼️ Intuitive graphical interface for configuration, execution, and monitoring without command-line use
+- 📂 Complete generation of FASTA files, Excel spreadsheets, and detailed logs, ready for teaching or research
 
 ---
 
-## 💾 Instalação
+## 💾 Installation
 
-### Versão terminal
+### Terminal version
 
-A versão terminal do Pynnotate é recomendada para usuários que preferem usar a ferramenta via prompt de comando ou integrar em pipelines automatizados.
+The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines.
 
-1. Clone o repositório do GitHub:
+1. Clone the GitHub repository:
 
 ```bash
 git clone https://github.com/fernandacaron/pynnotate.git
@@ -80,51 +63,49 @@ cd pynnotate
 pip install .
 ```
 
-> Requisitos: Python 3.8+
+> Requirements: Python 3.8+
 
-2. Execute o programa no terminal com:
+2. Run the programme in the terminal with:
 
 ```bash
 python pynnotate.py --help
 ```
 
-### Versão gráfica (GUI)
+### Graphical version (GUI)
 
-Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, empacotada em um arquivo .app para os principais sistemas operacionais.
+For ease of use, we provide a ready-to-use graphical version packaged as a `.app` file for major operating systems.
 
-1. Acesse a página de Releases no GitHub
-2. Baixe o instalador correspondente ao seu sistema
-3. Instale/descompacte o arquivo e execute o programa clicando no ícone
-4. A interface gráfica abrirá, permitindo configurar e executar todas as funções do programa sem usar o terminal
+1. Go to the Releases page on GitHub
+2. Download the installer for your system
+3. Install/unpack and run the programme by clicking its icon
+4. The graphical interface will open, allowing you to configure and run all functions without the terminal
 
 ---
 
-## 🧪 Exemplo de uso
+## 🧪 Usage example
 
-### Versão gráfica
+### Graphical version
 
-1. Defina um gene (ex: COI) e um organismo (ex: Anura)
-2. Clique em "💾 Search and download sequences"
-3. O programa irá buscar, baixar e extrair os dados automaticamente
-4. Veja os arquivos gerados no local escolhido
+1. Set a gene (e.g., COI) and an organism (e.g., Anura)  
+2. Click “💾 Search and download sequences”  
+3. The programme will search, download, and extract the data automatically  
+4. View the generated files in the chosen location  
 
-### Versão terminal
+### Terminal version
 
-O Pynnotate utiliza um arquivo de configuração em formato YAML para facilitar a configuração das opções. Um arquivo de exemplo está disponível na pasta examples/ do repositório, chamado config.yaml.
+Pynnotate uses a YAML configuration file to simplify option settings. An example file is available in the `examples/` folder of the repository, named `config.yaml`.
 
-Executando com o arquivo YAML:
+Run with the YAML file:
 
 ```bash
 python pynnotate.py -c examples/config.yaml
 ```
 
-#### Notas importantes:
+#### Important notes:
 
-O arquivo YAML agrupa todas as configurações, evitando a necessidade de múltiplos argumentos na linha de comando.
-
-Certifique-se de que os caminhos dos arquivos no YAML estejam corretos.
-
-Para ver todas as opções e suas descrições, execute:
+- The YAML file groups all configurations, avoiding the need for multiple command-line arguments.  
+- Ensure that all file paths in the YAML are correct.  
+- To see all available options and their descriptions, run:
 
 ```bash
 python pynnotate.py -h
@@ -132,181 +113,168 @@ python pynnotate.py -h
 
 ---
 
-## ⚙️ Detalhes dos Argumentos
+## ⚙️ Argument Details
 
-Pynnotate é uma ferramenta de linha de comando que aceita vários argumentos para personalizar a busca, download e extração de sequências do GenBank. Abaixo está a descrição detalhada de cada argumento disponível no código atual.
+Pynnotate is a command-line tool that accepts various arguments to customise the search, download, and extraction of sequences from GenBank. Below is a detailed description of each argument available in the current code.
 
-#### **Argumentos obrigatórios**
+#### **Mandatory Arguments**
 
-##### `-c` ou `--config`
+##### `-c` or `--config`
 
-Descrição: Caminho para o arquivo de configuração YAML que contém todas as opções para rodar o Pynnotate.
+Description: Path to the YAML configuration file containing all options to run Pynnotate.
 
-> Nota: O arquivo YAML agrupa todas as configurações, facilitando o uso sem múltiplos argumentos na linha de comando. Um exemplo está disponível na pasta examples/.
+> Note: The YAML file groups all settings, making it easier to use without multiple command-line arguments. An example is available in the `examples/` folder.
 
-#### **Argumentos obrigatórios no arquivo YAML**
+#### **Mandatory Arguments in the YAML File**
 
-Para rodar o Pynnotate corretamente via terminal, é necessário fornecer um arquivo de configuração YAML com pelo menos os seguintes campos obrigatórios:
+To run Pynnotate correctly via terminal, you must provide a YAML configuration file with at least the following required fields:
 
-##### `-e` ou `--email`
+##### `-e` or `--email`
 
-Descrição: Seu e-mail válido, exigido pelo NCBI Entrez para identificação e acesso ao GenBank.
+Description: Your valid email, required by NCBI Entrez for identification and access to GenBank.
 
-##### `-o` ou `--output`
+##### `-o` or `--output`
 
-Descrição: Diretório onde os arquivos de saída serão salvos (nome da pasta também pode ser provido com argumento `--folder`, mas não é obrigatório). 
+Description: Directory where output files will be saved (the folder name can also be provided via the `--folder` argument, but it is not mandatory).
 
-##### `-t` ou `--type`
+##### `-t` or `--type`
 
-Descrição: Tipo de genoma/organismo para determinar dicionário de sinônimos. Valores aceitos: *animal_mito, plant_mito, plant_chloro, other*.
+Description: Type of genome/organism to determine the synonym dictionary. Accepted values: *animal\_mito, plant\_mito, plant\_chloro, other*.
 
 ##### `--filter-mode`
 
-Descrição: Define como as sequências serão filtradas por espécie. Este parâmetro é essencial para controlar a redundância e a estrutura do seu conjunto de dados.
+Description: Defines how sequences will be filtered by species. This parameter is essential to control redundancy and the structure of your dataset.
 
-**Valores aceitos:**
+**Accepted values:**
 
-🌐 Unconstrained: Inclui todas as sequências disponíveis, independentemente da redundância. Útil quando você deseja explorar ou curar manualmente todos os registros.
+🌐 Unconstrained: Includes all available sequences regardless of redundancy. Useful when you want to manually explore or curate all records.
 
-🌱 Flexible: Permite múltiplas sequências por espécie somente se cada nova sequência adicionar genes diferentes (por exemplo, em análises de supermatrizes).
+🌱 Flexible: Allows multiple sequences per species only if each new sequence adds different genes (e.g., in supermatrix analyses).
 
-🔒 Strict: Inclui apenas uma sequência por espécie, priorizando aquela com o maior número de genes presentes no dicionário principal ou no dicionário fornecido pelo usuário.
+🔒 Strict: Includes only one sequence per species, prioritising the one with the highest number of genes present in the main dictionary or in the dictionary provided by the user.
 
-**⚠️ ATENÇÃO**: No modo strict, o filtro considera os genes listados no dicionário de sinônimos padrão e/ou no dicionário fornecido pelo usuário.
+**⚠️ NOTE**: In strict mode, the filter considers the genes listed in the default synonym dictionary and/or the dictionary provided by the user.
 
-**⚠️ ATENÇÃO**: Quando o modo unconstrained é usado em combinação com a extração de genes separadamente (`--extraction`), todas as sequências correspondentes aos genes selecionados serão baixadas, mesmo que haja múltiplos registros por espécie.
+**⚠️ NOTE**: When the unconstrained mode is used in combination with separate gene extraction (`--extraction`), all sequences corresponding to the selected genes will be downloaded, even if there are multiple records per species.
 
-**🚨 Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados:**
+**🚨 In addition, you must include either `--accession` or a search term in the query (`--genes`, `--organism`, `--publication` or `--additional`) to indicate the data search:**
 
-##### `-a` ou `--accession` 
+##### `-a` or `--accession`
 
-Descrição: Lista de IDs do GenBank (accessions) para baixar. Pode ser null se usar algum argumento da *query*.
+Description: List of GenBank IDs (accessions) to download. Can be null if using a query argument.
 
-> Nota: Use apenas se quiser buscar por IDs específicos em vez de usar uma query.
+> Note: Use only if you want to search for specific IDs instead of using a query.
 
-#### **Argumentos opcionais (configuração via YAML ou linha de comando)**
+#### **Optional Arguments (via YAML or Command Line)**
 
-##### `-g` ou `--genes`
+##### `-g` or `--genes`
 
-Descrição: Lista separada por vírugla dos genes para procurar e baixar (e.g., COI, CYTB, ATP6).
+Description: Comma-separated list of genes to search and download (e.g., COI, CYTB, ATP6).
 
-> Nota: Extrai só os genes listados, caso contrário extrai todos conhecidos.
+> Note: Extracts only the listed genes; otherwise, all known genes are extracted.
 
 ##### `-organism`
 
-Descrição: Organismos para procurar e baixar (e.g., espécies, família).
+Description: Organisms to search and download (e.g., species, family).
 
-##### `-p` ou `--publication`
+##### `-p` or `--publication`
 
-Descrição: Termo de publicação (e.g., título, autores, ano).
+Description: Publication term (e.g., title, authors, year).
 
 ##### `--additional`
 
-Descrição: Qualquer termo de busca adicional (e.g., NOT sp).
+Description: Any additional search term (e.g., NOT sp).
 
 ##### `--mitochondrialgene`
 
-Descrição: Refinar termos de busca para "genes mitocondriais".
+Description: Refine search terms to "mitochondrial genes".
 
 ##### `--mitogenome`
 
-Descrição: Refinar termos de busca para "mitogenomas".
+Description: Refine search terms to "mitogenomes".
 
 ##### `--chloroplast`
 
-Descrição: Refinar termos de busca para "cloroplasto".
+Description: Refine search terms to "chloroplast".
 
 ##### `--annotated`
 
-Descrição: Excluir registros não-anotados.
+Description: Exclude unannotated records.
 
 ##### `--header`
 
-Descrição: Campos para cabeçalho das sequências (campos do GenBank).
+Description: Fields for sequence headers (GenBank fields).
 
 ##### `--genbankid`
 
-Descrição: Incluir GenBank ID nos cabeçalhos fasta.
+Description: Include GenBank ID in the fasta headers.
 
 ##### `--prioritize`
 
-Descrição: Priorizar indivíduos com mais genes (válido para mitocondriais)
+Description: Prioritise individuals with more genes (valid for mitochondrial genes).
 
 ##### `--add_synonyms`
 
-Descrição: Sinônimos adicionais de nomes de genes em formato JSON. O pynnotate já inclui um dicionário interno de sinônimos de nomes de genes para auxiliar na extração. Você pode fornecer sinônimos adicionais para genes não reconhecidos automaticamente. Recomendamos executar o programa primeiro para identificar quaisquer sinônimos de genes não reconhecidos. Adicione quaisquer sinônimos ausentes aqui para melhorar a correspondência.
+Description: Additional synonyms for gene names in JSON format. Pynnotate already includes an internal dictionary of gene name synonyms to assist in extraction. You can provide additional synonyms for genes not automatically recognised. We recommend running the program first to identify any unrecognised gene synonyms. Add any missing synonyms here to improve matching.
 
-**⚠️ ATENÇÃO**: Ao selecionar o tipo de genoma e adicionar sinônimos, eles serão incorporados ao dicionário interno para aquele tipo específico de genoma. No entanto, se o tipo de genoma selecionado for 'other', apenas os sinônimos fornecidos pelo usuário serão usados.
+**⚠️ NOTE**: When selecting the genome type and adding synonyms, they will be incorporated into the internal dictionary for that specific genome type. However, if the selected genome type is 'other', only user-provided synonyms will be used.
 
 ##### `--min_bp`
 
-Descrição: Define o comprimento mínimo permitido para uma sequência para ser mantida.
+Description: Defines the minimum allowed length for a sequence to be retained.
 
 ##### `--max_bp`
 
-Descrição: Define o comprimento máximo permitido para uma sequência para ser mantida.
+Description: Defines the maximum allowed length for a sequence to be retained.
 
 ##### `--extraction`
 
-Descrição: Booleano. Se True, extrai todos os genes separadamente, agrupando diferentes indivíduos/espécies nos respactivos arquivos de cada gene.
+Description: Boolean. If True, extracts all genes separately, grouping different individuals/species into the respective files for each gene.
 
 ##### `--overlap`
 
-Descrição: Arrumar sobreposição entre genes extraídos.
+Description: Adjust overlap between extracted genes.
 
 ##### `--logmissing`
 
-Descrição: Gerar log de espécies faltantes por amostra (útil para mitogenomas).
+Description: Generate a log of missing species per sample (useful for mitogenomes).
 
 ##### `--folder`
 
-Descrição: Nome do pasta para criar dentro da pasta de saída (será criada automaticamente com nome pré-definido se argumento não existir).
+Description: Name of the folder to create inside the output directory (will be automatically created with a predefined name if the argument is not provided).
 
-#### **Outras opções**
+#### **Other Options**
 
-##### `-h` ou `--help`
+##### `-h` or `--help`
 
-Descrição: Mostra a ajuda com a lista completa dos argumentos e suas descrições.
-
-
----
-
-## 🧾 Arquivos gerados
-
-Após a execução, o Pynnotate cria automaticamente um conjunto de arquivos no diretório de saída especificado (`--output`). 
-
-output_folder/  
-├── sequences.fasta  
-├── log.txt  
-├── metadata.xlsx  
-├── genes_matrix.xlsx  
-└── genes/  
-    ├── COI.fasta  
-    ├── CYTB.fasta  
-    └── ...  
-
-1. *sequences.fasta*: Contêm as sequências extraídas sem separar por genes.
-2. *log.txt*: Relatório da execução do programa, útil para depuração e rastreabilidade. Inclui informações sobre os registros processados, problemas encontrados e decisões tomadas durante a filtragem.
-3. *metadata.xlsx*: Metadados contidos no GenBank de cada sequência extraída.
-4. *genes_matrix.xlsx*: Matriz indicando presença e ausência de cada genes nos registros baixados, incluindo os números de acesso.
-5. *genes.*: Pasta contendo as sequências separadas por genes.
+Description: Shows help with the complete list of arguments and their descriptions.
 
 ---
 
-## 🤝 Contribuição
+## 🧾 Generated files
 
-Contribuições são bem-vindas! Este projeto é de código aberto e livre para fins acadêmicos. 
+After running, Pynnotate creates the following in the specified output directory:
 
-Para relatar bugs, solicitar recursos ou enviar melhorias, abra uma issue ou um pull request.
+1. `sequences.fasta`: Extracted sequences without gene separation.  
+2. `log.txt`: Execution log for debugging and traceability.  
+3. `metadata.xlsx`: Metadata from GenBank for each sequence.  
+4. `genes_matrix.xlsx`: Presence/absence matrix of genes in downloaded records, with accession numbers.  
+5. `genes/`: Folder containing sequences separated by gene.
 
 ---
 
-## 📣 Citação
+## 🤝 Contributing
 
-Se você usar **pynnotate** em sua pesquisa, cite-o da seguinte forma:
+Contributions are welcome! This is an open-source project, free for academic purposes.  
+
+To report bugs, request features, or submit improvements, open an issue or pull request.
+
+---
+
+## 📣 Citation
+
+If you use **Pynnotate** in your research, please cite it as:
 
 ```
 Caron, F. S.*, Magalhães, F. M.*, Salles, M., & Domingos, F. M. B. C. (2025). pynnotate: a flexible tool for retrieving and processing GenBank data in molecular evolution research and education. GitHub: https://github.com/fernandacaron/pynnotate
 ```
-
----
