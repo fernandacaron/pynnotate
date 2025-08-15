@@ -7,9 +7,9 @@ import os
 import threading
 import logging
 
-from graphic.utils import show_gene_selector, show_field_selector,check_errors_gui_loop, open_synonyms_editor, show_help
+from pynnotate.graphic.utils import show_gene_selector, show_field_selector,check_errors_gui_loop, open_synonyms_editor, show_help
 
-from main.main import begin_search, error_queue
+from pynnotate.main.main import begin_search, error_queue
 
 def main():
 
@@ -55,9 +55,9 @@ def main():
 
 root = tk.Tk()
 if os.name == "nt":  # Windows
-    root.iconbitmap("logo.ico")
+    root.iconbitmap(os.path.join(output_dir, "logo.ico"))
 else:
-    img = tk.PhotoImage(file="logo_transparente.png")
+    img = tk.PhotoImage(file=os.path.join(output_dir, "logo_transparente.png"))
     root.iconphoto(True, img)
 root.title("Pynnotate v1.0")
 #root.geometry("650x700")
@@ -125,7 +125,7 @@ def create_centered_frame():
 # Frame 0
 frame0, content0 = create_centered_frame()
 
-logo_img = Image.open("logo_transparente.png")
+logo_img = Image.open(os.path.join(output_dir, "logo_transparente.png"))
 logo_img = logo_img.resize((200, 200))
 logo_photo = ImageTk.PhotoImage(logo_img)
 
