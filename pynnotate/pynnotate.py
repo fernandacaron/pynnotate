@@ -239,6 +239,7 @@ def main():
         "genes": final_config["genes"],
         "fields": final_config["header"],
         "output_name": final_config["output"],
+        "folder_name": final_config["folder"],
         "include_id": final_config["genbankid"],
         "mito": final_config["mitochondrialgene"],
         "mitogenome": final_config["mitogenome"],

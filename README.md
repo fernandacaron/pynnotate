@@ -68,7 +68,7 @@ pip install .
 2. Run the programme in the terminal with:
 
 ```bash
-python pynnotate.py --help
+pynnotate --help
 ```
 
 ### Graphical version (GUI)
