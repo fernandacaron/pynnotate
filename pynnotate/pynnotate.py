@@ -17,52 +17,52 @@ def get_args():
 
     parser.add_argument("-c", "--config", type=str, 
                         help="REQUIRED: Path to configuration file",
-                        required=True)
+                        required=True, metavar=None)
     parser.add_argument("-t", "--type",
                         type=str,
                         help="REQUIRED: Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("-a", "--accession",
                         type=lambda s: [acc.strip() for acc in a.split(',')],
-                        required=False,
+                        required=False, metavar=None,
                         help="Comma-separated list of GenBank accession numbers to search/download")
     parser.add_argument("-g", "--genes",
                         type=lambda s: [gene.strip() for gene in s.split(',')],
                         help="Comma-separated list of genes to search/download, e.g. COI,CYTB,ATP6",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("--organism",
                         type=str,
                         help="Organism to search/download",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("-p", "--publication",
                         type=str,
                         help="Publication term (title, authors, year)",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("--additional",
                         type=str,
                         help="Any additional search terms, e.g. NOT sp.",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("--mitochondrialgene", 
-                        action="store_true", 
+                        action="store_true", metavar=None,
                         help="Refine your search terms to Mitochondrial gene")
-    parser.add_argument("--mitogenome", 
+    parser.add_argument("--mitogenome", metavar=None
                         action="store_true", 
                         help="Refine your search terms to Mitogenome")
-    parser.add_argument("--chloroplast", 
+    parser.add_argument("--chloroplast", metavar=None,
                         action="store_true", 
                         help="Refine your search terms to Chloroplast")
-    parser.add_argument("--annotated", 
+    parser.add_argument("--annotated", metavar=None,
                         action="store_true", 
                         help="Delete unannotated records")
     parser.add_argument("--header",
                         type=str,
                         help="Header fields (Genbank fields)",
-                        required=False)
+                        required=False, metavar=None)
     parser.add_argument("--genbankid", 
                         action="store_true", 
                         help="Include GenBank ID in fasta header")
     parser.add_argument("--filter_mode", 
-                        required=True,
+                        required=True, metavar=None,
                         choices=["unconstrained", "flexible", "strict"],
                         default="unconstrained",
                         help=(
@@ -75,10 +75,10 @@ def get_args():
                             )
                         )
     parser.add_argument("--prioritize", 
-                        action="store_true", 
+                        action="store_true", metavar=None,
                         help="Prioritize individual with more genes (mitochondrial)")
     parser.add_argument("--add_synonyms", 
-                        type=json.loads, 
+                        type=json.loads, metavar=None,
                         default={},
                         help=("Additional gene name synonyms in JSON format."
                             "Pynnotate already includes an internal dictionary of gene name synonyms to aid extraction. You can provide additional synonyms for genes not automatically recognized. We recommend running the program first to identify any unrecognized gene synonyms. Add any missing synonyms here to improve matching. "
@@ -86,39 +86,39 @@ def get_args():
                         ),
                         required=False)
     parser.add_argument("--minbp",
-                        type=str,
+                        type=str, metavar=None,
                         help="Minimum sequence size (bp)",
                         required=False)
     parser.add_argument("--maxbp",
-                        type=str,
+                        type=str, metavar=None,
                         help="Maximum sequence size (bp)",
                         required=False)
     parser.add_argument("--extraction", 
-                        action="store_true", 
+                        action="store_true", metavar=None,
                         help="Extract all annotated genes separately")
     parser.add_argument("--overlap", 
-                        action="store_true", 
+                        action="store_true", metavar=None,
                         help="Fix overlap between extracted genes")
     parser.add_argument("--logmissing", 
-                        action="store_true", 
+                        action="store_true", metavar=None,
                         help="Generate log of missing genes per sample (useful for mitogenomes)")
     parser.add_argument("-e", "--email",
                         type=str,
-                        required=False,
+                        required=False, metavar=None,
                         help="REQUIRED: User e-mail to access NCBI database")
     parser.add_argument("-o", "--output",
                         type=str,
                         help="REQUIRED: Output folder",
-                        required=True,
+                        required=True, metavar=None,
                         default=".")
     parser.add_argument("-f", "--folder",
                         type=str,
                         help="Folder name to create inside output folder (will be created if it does not exist)",
-                        required=False,
+                        required=False, metavar=None,
                         default=".")
 
     args = parser.parse_args()
-    
+
     return args, parser
 
 
