@@ -2,11 +2,9 @@
 
 [🇧🇷 Versão em Português](README.pt-BR.md)
 
-**Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank.  
-Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, Pynnotate offers a user-friendly interface that requires no prior programming knowledge.
+**Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank. Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, Pynnotate offers a user-friendly interface that requires no prior programming knowledge.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  
-[![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
 1.  [✨ Features](#-features)  
 2.  [🛠️ Requirements](#-requirements)  
