@@ -1,5 +1,6 @@
-
 # 🧬 Pynnotate
+
+[🇬🇧 English version](README.md)
 
 **Pynnotate** é uma ferramenta gráfica (GUI) em Python para busca, download e anotação automática de sequências genéticas no GenBank.
 Desenvolvido tanto para pesquisadores avançados quanto para professores e alunos iniciantes em bioinformática, filogenia e genética molecular, pynnotate oferece uma interface amigável que não exige conhecimento prévio em programação.
@@ -59,23 +60,67 @@ Pesquisador e professor, PPG Zoologia (UFPR)
 
 ### Versão terminal
 
-A versão terminal do Pynnotate é recomendada para usuários que preferem usar a ferramenta via prompt de comando ou integrar em pipelines automatizados.
+A versão para terminal do Pynnotate é recomendada para usuários que preferem executar a ferramenta via linha de comando ou integrá-la em pipelines automatizados. Esse método funciona no **Windows**, **macOS** e **Linux**.
 
-1. Clone o repositório do GitHub:
+> **Requisitos:**  
+> - É necessário ter o Python **3.8 ou superior** instalado.  
+> - Para verificar se o Python está instalado, execute:  
+>   ```bash
+>   python --version
+>   ```
+>   ou  
+>   ```bash
+>   python3 --version
+>   ```
+> - Se o Python **não** estiver instalado:  
+>   - **Windows**: [Baixe do site python.org](https://www.python.org/downloads/windows/) e marque a opção “Add Python to PATH” durante a instalação.  
+>   - **macOS**: Instale via [python.org](https://www.python.org/downloads/macos/) ou usando o Homebrew:  
+>     ```bash
+>     brew install python
+>     ```
+>   - **Linux**: Use o gerenciador de pacotes da sua distribuição, por exemplo:  
+>     ```bash
+>     sudo apt install python3 python3-pip
+>     ```
 
-```bash
-git clone https://github.com/fernandacaron/pynnotate.git
-cd pynnotate
-pip install -e .
-```
 
-> Requisitos: Python 3.8+
+1. Clone o repositório do GitHub:  
 
-2. Execute o programa no terminal com:
+   Se tiver problemas com a autenticação via SSH, use a versão HTTPS abaixo (recomendada para a maioria dos usuários):
 
-```bash
-pynnotate --help
-```
+   **HTTPS (recomendado)**:
+   ```bash
+   git clone https://github.com/fernandacaron/pynnotate.git
+   ```
+
+   **SSH (para usuários avançados com chave SSH configurada)**:
+   ```bash
+   git clone git@github.com:fernandacaron/pynnotate.git
+   ```
+
+2. Acesse a pasta do projeto:
+
+   ```bash
+   cd pynnotate
+   ```
+
+3. Instale o Pynnotate:
+
+  ```bash
+  pip install -e .
+  ```
+
+4. Teste se o programa foi bem instalado:
+
+   ```bash
+   pynnotate --help
+   ```
+
+   Ou rode o exemplo com:
+
+   ```bash
+   pynnotate --config pynnotate/examples/config.yaml
+   ```
 
 ### Versão gráfica (GUI)
 
@@ -99,24 +144,22 @@ Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, emp
 
 ### Versão terminal
 
-O Pynnotate utiliza um arquivo de configuração em formato YAML para facilitar a configuração das opções. Um arquivo de exemplo está disponível na pasta examples/ do repositório, chamado config.yaml.
+O Pynnotate utiliza um arquivo de configuração em formato YAML para facilitar a configuração das opções. Um arquivo de exemplo está disponível na pasta `examples/` do repositório, chamado `config.yaml`.
 
 Executando com o arquivo YAML:
 
 ```bash
-python pynnotate.py -c examples/config.yaml
+pynnotate --config pynnotate/examples/config.yaml
 ```
 
 #### Notas importantes:
 
-O arquivo YAML agrupa todas as configurações, evitando a necessidade de múltiplos argumentos na linha de comando.
-
-Certifique-se de que os caminhos dos arquivos no YAML estejam corretos.
-
-Para ver todas as opções e suas descrições, execute:
+- O arquivo YAML agrupa todas as configurações, evitando a necessidade de múltiplos argumentos na linha de comando.
+- Certifique-se de que os caminhos dos arquivos no YAML estejam corretos.
+- Para ver todas as opções e suas descrições, execute:
 
 ```bash
-python pynnotate.py -h
+pynnotate --help
 ```
 
 ---
@@ -151,7 +194,7 @@ Descrição: Tipo de genoma/organismo para determinar dicionário de sinônimos.
 
 **⚠️ ATENÇÃO**: O tipo de genoma afeta a extração e filtragem de genes. Quando a extração está desabilitada, todas as sequências compatíveis com sua pesquisa serão baixadas, independente do tipo de genoma.
 
-##### `--filter-mode`
+##### `-f` ou `--filter-mode`
 
 Descrição: Define como as sequências serão filtradas por espécie. Este parâmetro é essencial para controlar a redundância e a estrutura do seu conjunto de dados.
 
@@ -169,7 +212,7 @@ Descrição: Define como as sequências serão filtradas por espécie. Este par�
 
 **🚨 Além destes, você deve incluir ou `--accession` ou algum termo de busca na query (`--genes`, `--organism`,  `--publication` ou `--additional`) para indicar a busca dos dados:**
 
-##### `-a` ou `--accession` 
+##### `--accession` 
 
 Descrição: Lista de IDs do GenBank (accessions) para baixar. Pode ser null se usar algum argumento da *query*.
 
@@ -177,7 +220,7 @@ Descrição: Lista de IDs do GenBank (accessions) para baixar. Pode ser null se 
 
 #### **Argumentos opcionais (configuração via YAML ou linha de comando)**
 
-##### `-g` ou `--genes`
+##### `--genes`
 
 Descrição: Lista separada por vírugla dos genes para procurar e baixar (e.g., COI, CYTB, ATP6).
 
@@ -187,7 +230,7 @@ Descrição: Lista separada por vírugla dos genes para procurar e baixar (e.g.,
 
 Descrição: Organismos para procurar e baixar (e.g., espécies, família).
 
-##### `-p` ou `--publication`
+##### `--publication`
 
 Descrição: Termo de publicação (e.g., título, autores, ano).
 
@@ -260,7 +303,6 @@ Descrição: Nome do pasta para criar dentro da pasta de saída (será criada au
 ##### `-h` ou `--help`
 
 Descrição: Mostra a ajuda com a lista completa dos argumentos e suas descrições.
-
 
 ---
 

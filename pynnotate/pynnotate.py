@@ -104,7 +104,7 @@ def get_args():
                         required=False,
                         help=("Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)\n"
                               "  ⚠️  WARNING: Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type."))
-    optional.add_argument("--filter_mode", 
+    optional.add_argument("-f", "--filter_mode", 
                         required=False,
                         choices=["unconstrained", "flexible", "strict"],
                         default="unconstrained",

@@ -1,5 +1,7 @@
 # 🧬 Pynnotate
 
+[🇧🇷 Versão em Português](README.pt-BR.md)
+
 **Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank.  
 Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, Pynnotate offers a user-friendly interface that requires no prior programming knowledge.
 
@@ -53,8 +55,7 @@ Researcher and lecturer, PPG Zoology (UFPR)
 
 ### Terminal version
 
-The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines.  
-This method works on **Windows**, **macOS**, and **Linux**.
+The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines. This method works on **Windows**, **macOS**, and **Linux**.
 
 > **Requirements:**  
 > - Python **3.8 or newer** must be installed.  
@@ -77,9 +78,8 @@ This method works on **Windows**, **macOS**, and **Linux**.
 >     sudo apt install python3 python3-pip
 >     ```
 
----
-
 1. Clone the GitHub repository:  
+
    If you have issues with SSH authentication, use the HTTPS version below (recommended for most users):
 
    **HTTPS (recommended)**:
@@ -137,7 +137,7 @@ Pynnotate uses a YAML configuration file to simplify option settings. An example
 Run with the YAML file:
 
 ```bash
-python pynnotate.py -c examples/config.yaml
+pynnotate --config pynnotate/examples/config.yaml
 ```
 
 #### Important notes:
@@ -147,7 +147,7 @@ python pynnotate.py -c examples/config.yaml
 - To see all available options and their descriptions, run:
 
 ```bash
-python pynnotate.py -h
+pynnotate --help
 ```
 
 ---
@@ -182,7 +182,7 @@ Description: Type of genome/organism to determine the synonym dictionary. Accept
 
 **⚠️ NOTE**: Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type.
 
-##### `--filter-mode`
+##### `-f` or `--filter-mode`
 
 Description: Defines how sequences will be filtered by species. This parameter is essential to control redundancy and the structure of your dataset.
 
@@ -200,7 +200,7 @@ Description: Defines how sequences will be filtered by species. This parameter i
 
 **🚨 In addition, you must include either `--accession` or a search term in the query (`--genes`, `--organism`, `--publication` or `--additional`) to indicate the data search:**
 
-##### `-a` or `--accession`
+##### `--accession`
 
 Description: List of GenBank IDs (accessions) to download. Can be null if using a query argument.
 
@@ -208,7 +208,7 @@ Description: List of GenBank IDs (accessions) to download. Can be null if using 
 
 #### **Optional Arguments (via YAML or Command Line)**
 
-##### `-g` or `--genes`
+##### `--genes`
 
 Description: Comma-separated list of genes to search and download (e.g., COI, CYTB, ATP6).
 
@@ -218,7 +218,7 @@ Description: Comma-separated list of genes to search and download (e.g., COI, CY
 
 Description: Organisms to search and download (e.g., species, family).
 
-##### `-p` or `--publication`
+##### `--publication`
 
 Description: Publication term (e.g., title, authors, year).
 
