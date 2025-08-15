@@ -13,8 +13,7 @@ def get_args():
             appear multiple times within a genome. 
             Example usage: --config config.yaml
         """,
-        formatter_class=argparse.RawTextHelpFormatter,
-        add_help=False)
+        formatter_class=argparse.RawTextHelpFormatter)
 
     parser.add_argument("-c", "--config", type=str, 
                         help="REQUIRED: Path to configuration file",
@@ -118,18 +117,8 @@ def get_args():
                         required=False,
                         default=".")
 
-    parser.add_argument("-h", "--help", 
-                        action="store_true",
-                        help="Show this help message and exit")
-
     args = parser.parse_args()
-
-    if args.help:
-        help_text = parser.format_help()
-        pager = subprocess.Popen(['less', '-R'], stdin=subprocess.PIPE)
-        pager.communicate(help_text.encode('utf-8'))
-        exit(0)
-
+    
     return args, parser
 
 
