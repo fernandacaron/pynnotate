@@ -16,18 +16,18 @@ def load_synonyms_from_str(input_str, root=None):
 		return {}
 
 def merge_synonyms(base_dict, user_dict):
-    merged = base_dict.copy()
-    for key, synonyms in user_dict.items():
-        if isinstance(synonyms, str):
-            synonyms = [synonyms]
-        elif not isinstance(synonyms, list):
-            synonyms = list(synonyms) if synonyms else []
-        
-        if key in merged:
-            merged[key] = list(set(merged[key] + synonyms))
-        else:
-            merged[key] = synonyms
-    return merged
+	merged = base_dict.copy()
+	for key, synonyms in user_dict.items():
+		if isinstance(synonyms, str):
+			synonyms = [synonyms]
+		elif not isinstance(synonyms, list):
+			synonyms = list(synonyms) if synonyms else []
+		
+		if key in merged:
+			merged[key] = list(set(merged[key] + synonyms))
+		else:
+			merged[key] = synonyms
+	return merged
 
 
 def normalize(text):
@@ -757,7 +757,7 @@ def begin_search(config, root=None):
 		output_dir = os.path.join(folder, f"pynnotate_{date_string}_{time_string}")
 
 	if not create_directory_safely(output_dir, root):
-	    return
+		return
 
 	if ids_text:
 		if root is not None:
@@ -1176,7 +1176,7 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 
 		for tag, entries in grouper_leu.items():
 			if not create_directory_safely(gene_folder, root):
-    			return
+				return
 			path = os.path.join(gene_folder, f"{tag}.fasta")
 			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
@@ -1184,7 +1184,7 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 		 
 		for tag, entries in grouper_ser.items():
 			if not create_directory_safely(gene_folder, root):
-    			return
+				return
 			path = os.path.join(gene_folder, f"{tag}.fasta")
 			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
@@ -1233,7 +1233,7 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 				for gene in sorted(gene_dict):
 					entries = gene_dict[gene]
 					if not create_directory_safely(gene_folder, root):
-    					return
+						return
 					safe_gene_name = sanitize_filename(gene)
 					path = os.path.join(gene_folder, f"{safe_gene_name}.fasta")
 					with open(path, "w", encoding='utf-8', newline='\n') as out:
