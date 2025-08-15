@@ -66,7 +66,7 @@ A versão terminal do Pynnotate é recomendada para usuários que preferem usar 
 ```bash
 git clone https://github.com/fernandacaron/pynnotate.git
 cd pynnotate
-pip install .
+pip install -e .
 ```
 
 > Requisitos: Python 3.8+
@@ -148,6 +148,8 @@ Descrição: Diretório onde os arquivos de saída serão salvos (nome da pasta 
 ##### `-t` ou `--type`
 
 Descrição: Tipo de genoma/organismo para determinar dicionário de sinônimos. Valores aceitos: *animal_mito, plant_mito, plant_chloro, other*.
+
+**⚠️ ATENÇÃO**: O tipo de genoma afeta a extração e filtragem de genes. Quando a extração está desabilitada, todas as sequências compatíveis com sua pesquisa serão baixadas, independente do tipo de genoma.
 
 ##### `--filter-mode`
 
@@ -238,6 +240,8 @@ Descrição: Define o comprimento máximo permitido para uma sequência para ser
 ##### `--extraction`
 
 Descrição: Booleano. Se True, extrai todos os genes separadamente, agrupando diferentes indivíduos/espécies nos respactivos arquivos de cada gene.
+
+**⚠️ ATENÇÃO**: A extração de genes será limitada ao dicionário de sinônimo selecionado. Por exemplo, selecionando 'plant_chloro', apenas genes de cloroplasto serão extraídos.
 
 ##### `--overlap`
 

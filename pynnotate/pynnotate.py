@@ -127,7 +127,7 @@ def get_args():
                         required=False,
                         default=".")
     optional.add_argument("--accession",
-                        type=lambda s: [acc.strip() for acc in a.split(',')],
+                        type=lambda s: [acc.strip() for acc in s.split(',')],
                         required=False,
                         help="Comma-separated list of GenBank accession numbers to search/download")
     optional.add_argument("--genes",

@@ -152,7 +152,7 @@ frame1, content1 = create_centered_frame()
 label_title = ttk.Label(content1, text="Step 1: Choose genome type", font=("Segoe UI", 18, "bold"))
 label_title.pack(pady=(0, 15))
 
-info_type = ttk.Label(content1, text="Genome type determines which gene synonyms will be used for identification and extraction", font=("Segoe UI", 12))
+info_type = ttk.Label(content1, text="Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type", font=("Segoe UI", 12))
 info_type.pack(pady=(0, 10), anchor="w")
 
 var_org_type = tk.StringVar(value="animal_mito")

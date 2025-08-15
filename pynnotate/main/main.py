@@ -14,15 +14,21 @@ def load_synonyms_from_str(input_str, root=None):
 	except Exception as e:
 		report_message(f"Failed to parse synonyms: {e}", "error", "Error", root)
 		return {}
-
+		
 def merge_synonyms(base_dict, user_dict):
-	merged = base_dict.copy()
-	for key, synonyms in user_dict.items():
-		if key in merged:
-			merged[key] = list(set(merged[key] + synonyms))
-		else:
-			merged[key] = synonyms
-	return merged
+    merged = base_dict.copy()
+    for key, synonyms in user_dict.items():
+        if isinstance(synonyms, str):
+            synonyms = [synonyms]
+        elif not isinstance(synonyms, list):
+            synonyms = list(synonyms) if synonyms else []
+        
+        if key in merged:
+            merged[key] = list(set(merged[key] + synonyms))
+        else:
+            merged[key] = synonyms
+    return merged
+
 
 def normalize(text):
 	import unicodedata
@@ -547,9 +553,6 @@ def make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast
 
 	if title:
 		query_parts.append(title)
-
-	if additional:
-		query_parts.append(additional)
 	 
 	if min_len or max_len:
 		min_val = int(min_len) if min_len else ""
@@ -564,6 +567,8 @@ def make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast
 
 	query = " AND ".join(query_parts)
 	query += " NOT wgs[prop] NOT tsa[prop]"
+	if additional:
+		query += f" {additional}"
 	
 	if add_unverified_exclusion:
 		query += " NOT UNVERIFIED"
@@ -582,7 +587,7 @@ def make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast
 		except:
 			report_message(f"An error occurred: {e}", "error", "Error")
 			ids = []
-	
+	print(query)
 	return ids, query
 
 def report_message(msg, level="info", title=None, root=None):

@@ -60,7 +60,7 @@ The terminal version of Pynnotate is recommended for users who prefer to run the
 ```bash
 git clone https://github.com/fernandacaron/pynnotate.git
 cd pynnotate
-pip install .
+pip install -e .
 ```
 
 > Requirements: Python 3.8+
@@ -140,6 +140,8 @@ Description: Directory where output files will be saved (the folder name can als
 ##### `-t` or `--type`
 
 Description: Type of genome/organism to determine the synonym dictionary. Accepted values: *animal\_mito, plant\_mito, plant\_chloro, other*.
+
+**⚠️ NOTE**: Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type.
 
 ##### `--filter-mode`
 
@@ -230,6 +232,8 @@ Description: Defines the maximum allowed length for a sequence to be retained.
 ##### `--extraction`
 
 Description: Boolean. If True, extracts all genes separately, grouping different individuals/species into the respective files for each gene.
+
+**⚠️ NOTE**: Gene extraction will be limited to the selected synonym dictionary. For example, when selecting 'plant_chloro', only chloroplast genes will be extracted.
 
 ##### `--overlap`
 
