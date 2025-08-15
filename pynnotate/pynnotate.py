@@ -13,7 +13,8 @@ def get_args():
             appear multiple times within a genome. 
             Example usage: --config config.yaml
         """,
-        formatter_class=argparse.RawTextHelpFormatter)
+        formatter_class=argparse.RawTextHelpFormatter,
+        add_help=False)
 
     parser.add_argument("-c", "--config", type=str, 
                         help="REQUIRED: Path to configuration file",
