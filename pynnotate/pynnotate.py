@@ -12,11 +12,13 @@ def get_args():
             It allows the user to specify a list of features to retrieve, handle synonyms for gene names, and manage features that  
             appear multiple times within a genome. 
             Example usage: --config config.yaml
-        """)
+        """,
+        formatter_class=argparse.RawTextHelpFormatter)
 
     parser.add_argument("-c", "--config", type=str, 
                         help="REQUIRED: Path to configuration file",
-                        required=True)
+                        required=True,
+                        metavar="")
     parser.add_argument("-t", "--type",
                         type=str,
                         help="REQUIRED: Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)",
@@ -116,9 +118,20 @@ def get_args():
                         required=False,
                         default=".")
 
+    parser.add_argument("-h", "--help", 
+                        action="store_true",
+                        help="Show this help message and exit")
+
     args = parser.parse_args()
 
+    if args.help:
+        help_text = parser.format_help()
+        pager = subprocess.Popen(['less', '-R'], stdin=subprocess.PIPE)
+        pager.communicate(help_text.encode('utf-8'))
+        exit(0)
+
     return args, parser
+
 
 def main():
 
