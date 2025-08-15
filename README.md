@@ -53,23 +53,62 @@ Researcher and lecturer, PPG Zoology (UFPR)
 
 ### Terminal version
 
-The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines.
+The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines.  
+This method works on **Windows**, **macOS**, and **Linux**.
 
-1. Clone the GitHub repository:
+> **Requirements:**  
+> - Python **3.8 or newer** must be installed.  
+> - To check if Python is installed, run:  
+>   ```bash
+>   python --version
+>   ```
+>   or  
+>   ```bash
+>   python3 --version
+>   ```
+> - If Python is not installed:  
+>   - **Windows**: [Download from python.org](https://www.python.org/downloads/windows/) and check “Add Python to PATH” during installation.  
+>   - **macOS**: Install via [python.org](https://www.python.org/downloads/macos/) or use Homebrew:  
+>     ```bash
+>     brew install python
+>     ```
+>   - **Linux**: Use your package manager, e.g.:  
+>     ```bash
+>     sudo apt install python3 python3-pip
+>     ```
 
-```bash
-git clone https://github.com/fernandacaron/pynnotate.git
-cd pynnotate
-pip install -e .
-```
+---
 
-> Requirements: Python 3.8+
+1. Clone the GitHub repository:  
+   If you have issues with SSH authentication, use the HTTPS version below (recommended for most users):
 
-2. Run the programme in the terminal with:
+   **HTTPS (recommended)**:
+   ```bash
+   git clone https://github.com/fernandacaron/pynnotate.git
+   ```
 
-```bash
-pynnotate --help
-```
+   **SSH (for advanced users with SSH keys configured)**:
+   ```bash
+   git clone git@github.com:fernandacaron/pynnotate.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd pynnotate
+   ```
+
+3. Install Pynnotate:
+
+   ```bash
+   pip install -e .
+   ```
+
+4. Test if the programme runs:
+
+   ```bash
+   pynnotate --help
+   ```
 
 ### Graphical version (GUI)
 

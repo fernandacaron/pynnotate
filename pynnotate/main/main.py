@@ -14,7 +14,7 @@ def load_synonyms_from_str(input_str, root=None):
 	except Exception as e:
 		report_message(f"Failed to parse synonyms: {e}", "error", "Error", root)
 		return {}
-		
+
 def merge_synonyms(base_dict, user_dict):
     merged = base_dict.copy()
     for key, synonyms in user_dict.items():
@@ -587,7 +587,7 @@ def make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast
 		except:
 			report_message(f"An error occurred: {e}", "error", "Error")
 			ids = []
-	print(query)
+
 	return ids, query
 
 def report_message(msg, level="info", title=None, root=None):
