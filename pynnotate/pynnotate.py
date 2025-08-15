@@ -18,8 +18,7 @@ def get_args():
 
     parser.add_argument("-c", "--config", type=str, 
                         help="REQUIRED: Path to configuration file",
-                        required=True,
-                        metavar="")
+                        required=True)
     parser.add_argument("-t", "--type",
                         type=str,
                         help="REQUIRED: Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)",
