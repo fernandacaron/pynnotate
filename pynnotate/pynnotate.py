@@ -3,7 +3,7 @@ import json
 
 from terminal.utils import load_config, merge_args_with_config
 
-from main.pynnotate import begin_search
+from main.main import begin_search
 
 def get_args():
     parser = argparse.ArgumentParser(
