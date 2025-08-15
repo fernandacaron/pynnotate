@@ -643,27 +643,6 @@ def sanitize_filename(filename):
 	
 	return filename.strip()
 
-def ensure_writable_directory(path):
-
-	import os
-	
-	try:
-		os.makedirs(path, exist_ok=True)
-		
-		test_file = os.path.join(path, '.write_test')
-		try:
-			with open(test_file, 'w') as f:
-				f.write('test')
-			os.remove(test_file)
-			return True, ""
-		except Exception as e:
-			return False, f"Cannot write to directory: {e}"
-			
-	except PermissionError:
-		return False, "Permission denied to create directory"
-	except Exception as e:
-		return False, f"Cannot create directory: {e}"
-
 def begin_search(config, root=None):
 
 	from datetime import datetime
@@ -772,17 +751,13 @@ def begin_search(config, root=None):
 	time_string = datetime.now().strftime("%Hh%Mm%Ss").lower()
 	folder = output_name if isinstance(output_name, str) else output_name[0]
 
-	can_write, error_msg = ensure_writable_directory(folder)
-	if not can_write:
-		report_message(f"Cannot create output directory: {error_msg}", "error", "Error", root)
-		return
-
 	if folder_name:
 		output_dir = os.path.join(folder, folder_name)
 	else:
 		output_dir = os.path.join(folder, f"pynnotate_{date_string}_{time_string}")
 
-	os.makedirs(output_dir, exist_ok=True)
+	if not create_directory_safely(output_dir, root):
+	    return
 
 	if ids_text:
 		if root is not None:
@@ -925,11 +900,7 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 	grouper_ser = defaultdict(list)
 
 	try:
-		os.makedirs(output_dir, exist_ok=True)
-
-		can_write, error_msg = ensure_writable_directory(output_dir)
-		if not can_write:
-			report_message(f"Output directory problem: {error_msg}", "error", "Error", root)
+		if not create_directory_safely(output_dir, root):
 			return
 
 		gene_folder = os.path.join(output_dir, "genes")
@@ -1204,14 +1175,16 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 				SeqIO.write(filtered_records, f_out, "fasta")
 
 		for tag, entries in grouper_leu.items():
-			os.makedirs(gene_folder, exist_ok=True)
+			if not create_directory_safely(gene_folder, root):
+    			return
 			path = os.path.join(gene_folder, f"{tag}.fasta")
 			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
 					out.write(f">{header}\n{seq}\n")
 		 
 		for tag, entries in grouper_ser.items():
-			os.makedirs(gene_folder, exist_ok=True)
+			if not create_directory_safely(gene_folder, root):
+    			return
 			path = os.path.join(gene_folder, f"{tag}.fasta")
 			with open(path, "w", encoding='utf-8', newline='\n') as out:
 				for header, seq, oid in entries:
@@ -1259,7 +1232,8 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 				lf.write("[EXTRACT GENES SUMMARY]:\n")
 				for gene in sorted(gene_dict):
 					entries = gene_dict[gene]
-					os.makedirs(gene_folder, exist_ok=True)
+					if not create_directory_safely(gene_folder, root):
+    					return
 					safe_gene_name = sanitize_filename(gene)
 					path = os.path.join(gene_folder, f"{safe_gene_name}.fasta")
 					with open(path, "w", encoding='utf-8', newline='\n') as out:

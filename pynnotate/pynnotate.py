@@ -194,7 +194,7 @@ def get_args():
     optional.add_argument("--logmissing", 
                         action="store_true",
                         help="Generate log of missing genes per sample (useful for mitogenomes)")
-    optional.add_argument("-f", "--folder",
+    optional.add_argument("--folder",
                         type=str,
                         help="Folder name to create inside output folder (will be created if it does not exist)",
                         required=False,
