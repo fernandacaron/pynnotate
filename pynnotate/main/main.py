@@ -669,7 +669,7 @@ def begin_search(config, root=None):
 
 	logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(message)s')
 
-	from main.alias_maps import alias_map_animal, alias_map_mito_plant, alias_map_chloroplast
+	from pynnotate.main.alias_maps import alias_map_animal, alias_map_mito_plant, alias_map_chloroplast
 
 	report_message("WELCOME TO PYNNOTATE!\n", "info", "Info")
 
@@ -857,7 +857,7 @@ def download_sequences(email, genbank_ids, output_dir, header_fields, alias_map,
 	from collections import defaultdict
 	import traceback
 
-	from graphic.utils import create_loading_window_with_progress
+	from pynnotate.graphic.utils import create_loading_window_with_progress
 
 	Entrez.email = email
 
