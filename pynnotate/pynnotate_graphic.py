@@ -55,9 +55,9 @@ def main():
 
 root = tk.Tk()
 if os.name == "nt":  # Windows
-    root.iconbitmap(os.path.join(output_dir, "logo.ico"))
+    root.iconbitmap(os.path.join("pynnotate", "logo.ico"))
 else:
-    img = tk.PhotoImage(file=os.path.join(output_dir, "logo_transparente.png"))
+    img = tk.PhotoImage(file=os.path.join("pynnotate", "logo_transparente.png"))
     root.iconphoto(True, img)
 root.title("Pynnotate v1.0")
 #root.geometry("650x700")
@@ -125,7 +125,7 @@ def create_centered_frame():
 # Frame 0
 frame0, content0 = create_centered_frame()
 
-logo_img = Image.open(os.path.join(output_dir, "logo_transparente.png"))
+logo_img = Image.open(os.path.join("pynnotate", "logo_transparente.png"))
 logo_img = logo_img.resize((200, 200))
 logo_photo = ImageTk.PhotoImage(logo_img)
 
@@ -151,6 +151,9 @@ frame1, content1 = create_centered_frame()
 
 label_title = ttk.Label(content1, text="Step 1: Choose genome type", font=("Segoe UI", 18, "bold"))
 label_title.pack(pady=(0, 15))
+
+info_type = ttk.Label(content1, text="Genome type determines which gene synonyms will be used for identification and extraction", font=("Segoe UI", 12))
+info_type.pack(pady=(0, 10), anchor="w")
 
 var_org_type = tk.StringVar(value="animal_mito")
 
@@ -423,6 +426,24 @@ chk_extract_all_genes = ttk.Checkbutton(
 )
 chk_extract_all_genes.pack(anchor="center", padx=5, pady=(0, 8))
 
+warning_extract_all_genes = ttk.Label(
+    content4,
+    text="⚠️ WARNING: Gene extraction will be limited to the selected synonym dictionary. For example, when selecting 'plant_chloro', only chloroplast genes will be extracted.",
+    #foreground="black",
+    wraplength=550,
+    justify="center",
+    font=("Segoe UI", 12)
+)
+
+def update_extraction_warning(*args):
+    if var_extract_all_genes.get():
+        warning_extract_all_genes.pack(anchor="center", padx=5, pady=(10, 5))
+    else:
+        warning_extract_all_genes.pack_forget()
+
+# Associa o trace
+var_extract_all_genes.trace_add("write", update_extraction_warning)
+
 # Additional checkbuttons (initially hidden)
 chk_delete_overlap = ttk.Checkbutton(
     content4,
@@ -469,6 +490,8 @@ btn_previous4.pack(side="left", padx=10)
 
 btn_next4 = ttk.Button(button_frame4, text="Next ▶", command=next_frame)
 btn_next4.pack(side="left", padx=10)
+
+warning_extract_all_genes.pack(anchor="center", padx=5, pady=(10, 5))
 
 # Frame 5
 frame5, content5 = create_centered_frame()

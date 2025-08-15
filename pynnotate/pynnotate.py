@@ -102,7 +102,8 @@ def get_args():
     optional.add_argument("-t", "--type",
                         type=str,
                         required=False,
-                        help="Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)")
+                        help=("Type of DNA (i.e. animal_mito, plant_mito, plant_chloro, other)\n"
+                              "  ⚠️  WARNING: Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type."))
     optional.add_argument("--filter_mode", 
                         required=False,
                         choices=["unconstrained", "flexible", "strict"],
@@ -172,7 +173,7 @@ def get_args():
                         default={},
                         help=("Additional gene name synonyms in JSON format\n\n"
                             "Pynnotate already includes an internal dictionary of gene name synonyms to aid extraction. You can provide additional synonyms for genes not automatically recognized. We recommend running the program first to identify any unrecognized gene synonyms. Add any missing synonyms here to improve matching\n\n"
-                            "⚠️  ATTENTION: When selecting the genome type and adding synonyms, they will be incorporated into the internal dictionary for that specific genome type. However, if the genome type selected is 'Other', only the synonyms provided by the user will be used"
+                            "  ⚠️  WARNING: When selecting the genome type and adding synonyms, they will be incorporated into the internal dictionary for that specific genome type. However, if the genome type selected is 'Other', only the synonyms provided by the user will be used"
                         ),
                         required=False)
     optional.add_argument("--minbp",
@@ -185,7 +186,8 @@ def get_args():
                         required=False)
     optional.add_argument("--extraction", 
                         action="store_true",
-                        help="Extract all annotated genes separately")
+                        help=("Extract all annotated genes separately\n"
+                              "  ⚠️  WARNING: Gene extraction will be limited to the selected synonym dictionary. For example, when selecting 'plant_chloro', only chloroplast genes will be extracted."))
     optional.add_argument("--overlap", 
                         action="store_true",
                         help="Fix overlap between extracted genes")
@@ -231,7 +233,7 @@ def main():
         unique_species = False
 
     extraction = config.get("extraction", False)
-
+    print(final_config["type"])
     config = {
         "email": final_config["email"],
         "title": final_config["publication"],

@@ -500,7 +500,7 @@ def metadata_gene_vs_sample(gene_dict, excel_data, header_fields, output_dir, co
 	out_path = os.path.join(output_dir, "genes_matrix.xlsx")
 	wb.save(out_path)
 
-def make_query(email, alias_map, org_type, genes, organisms, mito, mitogenome, chloroplast, title, additional, min_len, max_len, add_unverified_exclusion):
+def make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast, title, additional, min_len, max_len, add_unverified_exclusion):
 
 	import logging
 
@@ -712,8 +712,8 @@ def begin_search(config, root=None):
 
 	alias_map_base = {
 		"animal_mito": alias_map_animal,
-		"planta_mito": alias_map_mito_plant,
-		"planta_cloro": alias_map_chloroplast,
+		"plant_mito": alias_map_mito_plant,
+		"plant_chloro": alias_map_chloroplast,
 		"other": {}
 	}.get(org_type, alias_map_animal)
 
@@ -817,7 +817,7 @@ def begin_search(config, root=None):
 			root.after(0, lambda: set_widgets_state(True))
 		return
 
-	ids, query = make_query(email, alias_map, org_type, genes, organisms, mito, mitogenome, chloroplast, title, additional, min_len, max_len, add_unverified_deletion)
+	ids, query = make_query(email, alias_map, genes, organisms, mito, mitogenome, chloroplast, title, additional, min_len, max_len, add_unverified_deletion)
 
 	if ids:
 		if root is not None:
