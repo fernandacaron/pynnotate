@@ -233,7 +233,7 @@ def main():
         unique_species = False
 
     extraction = config.get("extraction", False)
-    print(final_config["type"])
+
     config = {
         "email": final_config["email"],
         "title": final_config["publication"],
