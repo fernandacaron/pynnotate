@@ -2,6 +2,32 @@ import queue
 
 error_queue = queue.Queue()
 
+def create_directory_safely(directory_path, root=None):
+	try:
+		os.makedirs(directory_path, exist_ok=True)
+		
+		test_file = os.path.join(directory_path, '.write_test')
+		try:
+			with open(test_file, 'w') as f:
+				f.write('test')
+			os.remove(test_file)
+			return True
+		except PermissionError:
+			report_message(f"Permission denied to write in directory: {directory_path}. Try running as administrator or choose a different folder.", "error", "Permission Error", root)
+			return False
+		except Exception as e:
+			report_message(f"Cannot write to directory {directory_path}: {e}", "error", "Directory Error", root)
+			return False
+			
+	except PermissionError:
+		report_message(f"Permission denied to create directory: {directory_path}. Try running as administrator or choose a different folder.", "error", "Permission Error", root)
+		return False
+	except FileExistsError:
+		return True
+	except Exception as e:
+		report_message(f"Error creating directory {directory_path}: {e}", "error", "Directory Error", root)
+		return False
+
 def load_synonyms_from_str(input_str, root=None):
 	import yaml
 
