@@ -3,6 +3,8 @@ import queue
 error_queue = queue.Queue()
 
 def create_directory_safely(directory_path, root=None):
+	import os
+	
 	try:
 		os.makedirs(directory_path, exist_ok=True)
 		
