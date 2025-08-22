@@ -2,7 +2,7 @@
 
 [🇧🇷 Versão em Português](README.pt-BR.md)
 
-**Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank. Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, Pynnotate offers a user-friendly interface that requires no prior programming knowledge.
+**Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank. Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, *pynnotate* offers a user-friendly interface that requires no prior programming knowledge.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
@@ -20,16 +20,16 @@
 ## 👥 Authors
 
 **Fernanda de Souza Caron**  
-PhD researcher, PPG Ecology and Conservation (UFPR)
+Federal University of Paraná (UFPR)
 
 **Felipe de Medeiros Magalhães**  
-Postdoctoral researcher, Federal University of Paraíba (UFPB)
+Federal University of Paraíba (UFPB)
 
 **Matheus Salles**  
-PhD researcher, PPG Zoology (UFPR)
+Federal University of Paraná (UFPR)
 
 **Fabricius M. C. B. Domingos**  
-Researcher and lecturer, PPG Zoology (UFPR)
+Federal University of Paraná (UFPR)
 
 ---
 
@@ -40,9 +40,9 @@ Researcher and lecturer, PPG Zoology (UFPR)
 - ✂️ Sequence length filters and options to prioritise samples, ideal for different analysis levels
 - Filtering modes:  
   🌐 Unconstrained mode: includes all sequences found  
-  🌱 Flexible mode (`unique_species = True`): allows multiple sequences per species if genes differ  
-  🔒 Strict mode (`prioritize_more_genes = True`): includes only the best sequence per species, ideal for simple analyses  
-- 🧬 Supports mitogenomes, chloroplasts, and nuclear genomes
+  🌱 Flexible mode (`unique_species = True`): allows multiple sequences per species if genes differ
+  🔒 Strict mode (`prioritize_more_genes = True`): includes only the most complete sequence per species
+- 🧬 Supports mitogenomes, chloroplasts, nuclear genomes, or user specified features
 - 👓 Automatic identification of multiple copies of tRNA-Leu and tRNA-Ser, with grouping by genomic position
 - 🖼️ Intuitive graphical interface for configuration, execution, and monitoring without command-line use
 - 📂 Complete generation of FASTA files, Excel spreadsheets, and detailed logs, ready for teaching or research
@@ -53,7 +53,7 @@ Researcher and lecturer, PPG Zoology (UFPR)
 
 ### Terminal version
 
-The terminal version of Pynnotate is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines. This method works on **Windows**, **macOS**, and **Linux**.
+The terminal version of *pynnotate* is recommended for users who prefer to run the tool via command line or integrate it into automated pipelines. This method works on **Windows**, **macOS**, and **Linux**.
 
 > **Requirements:**  
 > - Python **3.8 or newer** must be installed.  
@@ -85,7 +85,7 @@ The terminal version of Pynnotate is recommended for users who prefer to run the
    git clone https://github.com/fernandacaron/pynnotate.git
    ```
 
-   **SSH (for advanced users with SSH keys configured)**:
+   **SSH (for users with SSH keys configured)**:
    ```bash
    git clone git@github.com:fernandacaron/pynnotate.git
    ```
@@ -96,7 +96,7 @@ The terminal version of Pynnotate is recommended for users who prefer to run the
    cd pynnotate
    ```
 
-3. Install Pynnotate:
+3. Install *pynnotate*:
 
    ```bash
    pip install -e .
@@ -108,9 +108,15 @@ The terminal version of Pynnotate is recommended for users who prefer to run the
    pynnotate --help
    ```
 
+   Or run the example:
+
+   ```bash
+   pynnotate --config pynnotate/examples/config.yaml
+   ```
+
 ### Graphical version (GUI)
 
-For ease of use, we provide a ready-to-use graphical version packaged as a `.app` file for major operating systems.
+For ease of use, we provide a ready-to-use graphical version compiled for major operating systems.
 
 1. Go to the Releases page on GitHub
 2. Download the installer for your system
@@ -152,13 +158,13 @@ pynnotate --help
 
 ## ⚙️ Argument Details
 
-Pynnotate is a command-line tool that accepts various arguments to customise the search, download, and extraction of sequences from GenBank. Below is a detailed description of each argument available in the current code.
+*Pynnotate* is a command-line tool that accepts various arguments to customise the search, download, and extraction of sequences from GenBank. Below is a detailed description of each argument available in the current code.
 
 #### **Mandatory Arguments**
 
 ##### `-c` or `--config`
 
-Description: Path to the YAML configuration file containing all options to run Pynnotate.
+Description: Path to the YAML configuration file containing all options to run *pynnotate*.
 
 > Note: The YAML file groups all settings, making it easier to use without multiple command-line arguments. An example is available in the `examples/` folder.
 
@@ -176,7 +182,7 @@ Description: Directory where output files will be saved (the folder name can als
 
 ##### `-t` or `--type`
 
-Description: Type of genome/organism to determine the synonym dictionary. Accepted values: *animal\_mito, plant\_mito, plant\_chloro, other*.
+Description: Type of genome/organism to determine the synonym dictionary. Accepted values: *animal_mito, plant_mito, plant_chloro, other*.
 
 **⚠️ NOTE**: Genome type selection affects gene extraction and filtering. When extraction is disabled, all sequences matching your search will be downloaded regardless of genome type.
 
@@ -196,15 +202,15 @@ Description: Defines how sequences will be filtered by species. This parameter i
 
 **⚠️ NOTE**: When the unconstrained mode is used in combination with separate gene extraction (`--extraction`), all sequences corresponding to the selected genes will be downloaded, even if there are multiple records per species.
 
-**🚨 In addition, you must include either `--accession` or a search term in the query (`--genes`, `--organism`, `--publication` or `--additional`) to indicate the data search:**
+**🚨 In addition, you must include either `--accession` or a search term in the query (`--genes`, `--organism`, `--publication` or `--additional`) to indicate the data search.**
+
+#### **Optional Arguments (via YAML or Command Line)**
 
 ##### `--accession`
 
 Description: List of GenBank IDs (accessions) to download. Can be null if using a query argument.
 
 > Note: Use only if you want to search for specific IDs instead of using a query.
-
-#### **Optional Arguments (via YAML or Command Line)**
 
 ##### `--genes`
 
@@ -226,19 +232,19 @@ Description: Any additional search term (e.g., NOT sp).
 
 ##### `--mitochondrialgene`
 
-Description: Refine search terms to "mitochondrial genes".
+Description: Boolean. Refine search terms to "mitochondrial genes".
 
 ##### `--mitogenome`
 
-Description: Refine search terms to "mitogenomes".
+Description: Boolean. Refine search terms to "mitogenomes".
 
 ##### `--chloroplast`
 
-Description: Refine search terms to "chloroplast".
+Description: Boolean. Refine search terms to "chloroplast".
 
 ##### `--annotated`
 
-Description: Exclude unannotated records.
+Description: Boolean. Exclude unannotated records.
 
 ##### `--header`
 
@@ -246,11 +252,11 @@ Description: Fields for sequence headers (GenBank fields).
 
 ##### `--genbankid`
 
-Description: Include GenBank ID in the fasta headers.
+Description: Boolean. Include GenBank ID in the fasta headers.
 
 ##### `--prioritize`
 
-Description: Prioritise individuals with more genes (valid for mitochondrial genes).
+Description: Boolean. Prioritise individuals with more genes (valid for mitochondrial genes).
 
 ##### `--add_synonyms`
 
@@ -274,11 +280,11 @@ Description: Boolean. If True, extracts all genes separately, grouping different
 
 ##### `--overlap`
 
-Description: Adjust overlap between extracted genes.
+Description: Boolean. Adjust overlap between extracted genes.
 
 ##### `--logmissing`
 
-Description: Generate a log of missing species per sample (useful for mitogenomes).
+Description: Boolean. Generate a log of missing species per sample (useful for mitogenomes).
 
 ##### `--folder`
 
@@ -294,7 +300,7 @@ Description: Shows help with the complete list of arguments and their descriptio
 
 ## 🧾 Generated files
 
-After running, Pynnotate creates the following in the specified output directory:
+After running, *pynnotate* creates the following in the specified output directory:
 
 1. `sequences.fasta`: Extracted sequences without gene separation.  
 2. `log.txt`: Execution log for debugging and traceability.  
@@ -314,7 +320,7 @@ To report bugs, request features, or submit improvements, open an issue or pull 
 
 ## 📣 Citation
 
-If you use **Pynnotate** in your research, please cite it as:
+If you use ***pynnotate*** in your research, please cite it as:
 
 ```
 Caron, F. S.*, Magalhães, F. M.*, Salles, M., & Domingos, F. M. B. C. (2025). pynnotate: a flexible tool for retrieving and processing GenBank data in molecular evolution research and education. GitHub: https://github.com/fernandacaron/pynnotate
