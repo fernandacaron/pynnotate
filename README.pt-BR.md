@@ -7,13 +7,12 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 1.  [✨ Funcionalidades](#-funcionalidades)
-2.  [🛠️ Requisitos](#-requisitos)
-3.  [💾 Instalação](#-instalação)
-4.  [🧪 Exemplo de uso](#-exemplo-de-uso-versão-terminal)
-5.  [⚙️ Detalhes dos Argumentos](%EF%B8%8F-detalhes-dos-argumentos)
-6.  [🧾 Arquivos gerados](#-arquivos-gerados)
-7.  [🤝 Contribuição](#-contribuição)
-8.  [📣 Citação](#-citação)
+2.  [💾 Instalação](#-instalação)
+3.  [🧪 Exemplo de uso](#-exemplo-de-uso)
+4.  [⚙️ Detalhes dos Argumentos](#%EF%B8%8F-detalhes-dos-argumentos)
+5.  [🧾 Arquivos gerados](#-arquivos-gerados)
+6.  [🤝 Contribuição](#-contribuição)
+7.  [📣 Citação](#-citação)
 
 ---
 

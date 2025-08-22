@@ -7,13 +7,12 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
 1.  [✨ Features](#-features)  
-2.  [🛠️ Requirements](#-requirements)  
-3.  [💾 Installation](#-installation)  
-4.  [🧪 Usage example](#-usage-example---terminal-version)  
-5.  [⚙️ Argument details](#%EF%B8%8F-argument-details)  
-6.  [🧾 Generated files](#-generated-files)  
-7.  [🤝 Contributing](#-contributing)  
-8.  [📣 Citation](#-citation)  
+2.  [💾 Installation](#-installation)  
+3.  [🧪 Usage example](#-usage-example)  
+4.  [⚙️ Argument details](#%EF%B8%8F-argument-details)  
+5.  [🧾 Generated files](#-generated-files)  
+6.  [🤝 Contributing](#-contributing)  
+7.  [📣 Citation](#-citation)  
 
 ---
 
@@ -40,8 +39,8 @@ Federal University of Paraná (UFPR)
 - ✂️ Sequence length filters and options to prioritise samples, ideal for different analysis levels
 - Filtering modes:  
   🌐 Unconstrained mode: includes all sequences found  
-  🌱 Flexible mode (`unique_species = True`): allows multiple sequences per species if genes differ
-  🔒 Strict mode (`prioritize_more_genes = True`): includes only the most complete sequence per species
+  🌱 Flexible mode (`unique_species = True`): allows multiple sequences per species if genes differ  
+  🔒 Strict mode (`prioritize_more_genes = True`): includes only the most complete sequence per species  
 - 🧬 Supports mitogenomes, chloroplasts, nuclear genomes, or user specified features
 - 👓 Automatic identification of multiple copies of tRNA-Leu and tRNA-Ser, with grouping by genomic position
 - 🖼️ Intuitive graphical interface for configuration, execution, and monitoring without command-line use
