@@ -117,7 +117,7 @@ The terminal version of *pynnotate* is recommended for users who prefer to run t
 
 For ease of use, we provide a ready-to-use graphical version compiled for major operating systems.
 
-1. Go to the Releases page on GitHub
+1. Go to the [Releases](https://github.com/fernandacaron/pynnotate/releases) page on GitHub
 2. Download the installer for your system
 3. Install/unpack and run the programme by clicking its icon
 4. The graphical interface will open, allowing you to configure and run all functions without the terminal
