@@ -12,7 +12,7 @@
 3.  [🧪 Exemplo de uso](#-exemplo-de-uso)
 4.  [⚙️ Detalhes dos Argumentos](#%EF%B8%8F-detalhes-dos-argumentos)
 5.  [🧾 Arquivos gerados](#-arquivos-gerados)
-6.  [🤝 Contribuição](#-contribuição)
+6.  [🤝 Ajuda](#-ajuda)
 7.  [📣 Citação](#-citação)
 
 ---
