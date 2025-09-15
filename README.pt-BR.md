@@ -129,6 +129,10 @@ Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, com
 
 ### Versão gráfica
 
+<p align="center">
+   <img src="interface.png" alt="GraphicalVersion" width="400">
+</p>
+
 1. Defina um gene (ex: COI) e um organismo (ex: Anura)
 2. Clique em "💾 Search and download sequences"
 3. O programa irá buscar, baixar e extrair os dados automaticamente
