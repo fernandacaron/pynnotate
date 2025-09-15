@@ -11,7 +11,7 @@
 3.  [🧪 Usage example](#-usage-example)  
 4.  [⚙️ Argument details](#%EF%B8%8F-argument-details)  
 5.  [🧾 Generated files](#-generated-files)  
-6.  [🤝 Contributing](#-contributing)  
+6.  [🤝 Help](#-help)  
 7.  [📣 Citation](#-citation)  
 
 ---
@@ -309,11 +309,33 @@ After running, *pynnotate* creates the following in the specified output directo
 
 ---
 
-## 🤝 Contributing
+## 🤝 Help
 
-Contributions are welcome! This is an open-source project, free for academic purposes.  
+This is an open-source project, free for academic purposes.
 
-To report bugs, request features, or submit improvements, open an issue or pull request.
+### 📝 How to Report Issues or Ask Questions
+
+New to GitHub? Don't worry! Follow this step-by-step guide:
+
+1. Click on the "Issues" tab at the top of this repository page
+2. Click the green "New Issue" button
+3. Choose an appropriate template (if available) or start with a blank issue
+4. Title: Be clear and descriptive (e.g., "Error when running function X")
+5. Description: Please include:
+   - What you were trying to do
+   - What actually happened (the error/problem)
+   - Steps to reproduce the issue
+   - Your operating system and software versions
+   - Screenshots or error messages (if applicable)
+
+### 🏷️ Using Labels
+
+When creating an issue, you can add labels like:
+
+   - `bug` - for problems or errors
+   - `enhancement` - for feature requests
+   - `question` - for general questions
+   - `help wanted` - if you need assistance
 
 ---
 
