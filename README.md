@@ -4,7 +4,12 @@
 
 **Pynnotate** is a Python graphical tool (GUI) for searching, downloading, and automatically annotating genetic sequences from GenBank. Developed for both advanced researchers and teachers or students new to bioinformatics, phylogeny, and molecular genetics, *pynnotate* offers a user-friendly interface that requires no prior programming knowledge.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)  [![Licence: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  ![Release](https://img.shields.io/github/v/release/fernandacaron/pynnotate)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20macos-lightgrey)
+![OS](https://img.shields.io/badge/OS-Linux-red?logo=linux)
+![OS](https://img.shields.io/badge/OS-Windows-blue?logo=windows)
+![OS](https://img.shields.io/badge/OS-macOS-black?logo=apple)
+
 
 1.  [✨ Features](#-features)  
 2.  [💾 Installation](#-installation)  
@@ -155,11 +160,11 @@ pynnotate --help
 
 ---
 
-## ⚙️ Argument Details
+## ⚙️ Argument details
 
 *Pynnotate* is a command-line tool that accepts various arguments to customise the search, download, and extraction of sequences from GenBank. Below is a detailed description of each argument available in the current code.
 
-#### **Mandatory Arguments**
+#### **Mandatory arguments**
 
 ##### `-c` or `--config`
 
@@ -167,7 +172,7 @@ Description: Path to the YAML configuration file containing all options to run *
 
 > Note: The YAML file groups all settings, making it easier to use without multiple command-line arguments. An example is available in the `examples/` folder.
 
-#### **Mandatory Arguments in the YAML File**
+#### **Mandatory arguments in the YAML file**
 
 To run Pynnotate correctly via terminal, you must provide a YAML configuration file with at least the following required fields:
 
@@ -289,7 +294,7 @@ Description: Boolean. Generate a log of missing species per sample (useful for m
 
 Description: Name of the folder to create inside the output directory (will be automatically created with a predefined name if the argument is not provided).
 
-#### **Other Options**
+#### **Other options**
 
 ##### `-h` or `--help`
 
@@ -313,22 +318,22 @@ After running, *pynnotate* creates the following in the specified output directo
 
 This is an open-source project, free for academic purposes.
 
-### 📝 How to Report Issues or Ask Questions
+### 📝 How to report issues or ask questions
 
 New to GitHub? Don't worry! Follow this step-by-step guide:
 
-1. Click on the "Issues" tab at the top of this repository page
-2. Click the green "New Issue" button
+1. Click on the **"Issues"** tab at the top of this repository page
+2. Click the green **"New Issue"** button
 3. Choose an appropriate template (if available) or start with a blank issue
-4. Title: Be clear and descriptive (e.g., "Error when running function X")
-5. Description: Please include:
+4. **Title**: Be clear and descriptive (e.g., "Error when running function X")
+5. **Description**: Please include:
    - What you were trying to do
    - What actually happened (the error/problem)
    - Steps to reproduce the issue
    - Your operating system and software versions
    - Screenshots or error messages (if applicable)
 
-### 🏷️ Using Labels
+### 🏷️ Using labels
 
 When creating an issue, you can add labels like:
 

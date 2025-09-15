@@ -309,11 +309,33 @@ Após a execução, o *pynnotate* cria automaticamente um conjunto de arquivos n
 
 ---
 
-## 🤝 Contribuição
+## 🤝 Ajuda
 
-Contribuições são bem-vindas! Este projeto é de código aberto e livre para fins acadêmicos. 
+Este é um projeto open-source, gratuito para fins acadêmicos.
 
-Para relatar bugs, solicitar recursos ou enviar melhorias, abra uma issue ou um pull request.
+### 📝 Como reportar problemas ou fazer perguntas
+
+Novo no GitHub? Não se preocupe! Siga este guia passo a passo:
+
+1. Clique na aba **"Issues"** no topo desta página do repositório
+2. Clique no botão verde **"New Issue"**
+3. Escolha um template apropriado (se disponível) ou comece com uma issue em branco
+4. **Título**: Seja claro e descritivo (ex: "Erro ao executar função X")
+5. **Descrição**: Por favor, inclua:
+   - O que você estava tentando fazer
+   - O que realmente aconteceu (o erro/problema)
+   - Passos para reproduzir o problema
+   - Seu sistema operacional e versões dos softwares
+   - Capturas de tela ou mensagens de erro (se aplicável)
+
+### 🏷️ Usando labels
+
+Ao criar uma issue, você pode adicionar labels como:
+
+   - `bug` - para problemas ou erros
+   - `enhancement` - para solicitações de recursos
+   - `question` - para perguntas gerais
+   - `help wanted` - se você precisa de assistência
 
 ---
 
