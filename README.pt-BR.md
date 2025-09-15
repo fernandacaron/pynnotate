@@ -117,7 +117,7 @@ A versão para terminal do *pynnotate* é recomendada para usuários que prefere
 
 Para facilitar o uso, disponibilizamos uma versão gráfica pronta para uso, compilada para os principais sistemas operacionais.
 
-1. Acesse a página de Releases no GitHub
+1. Acesse a página de [Releases](https://github.com/fernandacaron/pynnotate/releases) no GitHub
 2. Baixe o instalador correspondente ao seu sistema
 3. Instale/descompacte o arquivo e execute o programa clicando no ícone
 4. A interface gráfica abrirá, permitindo configurar e executar todas as funções do programa sem usar o terminal
