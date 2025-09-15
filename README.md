@@ -130,7 +130,9 @@ For ease of use, we provide a ready-to-use graphical version compiled for major 
 
 ### Graphical version
 
-<img src="interface.png" alt="GraphicalVersion" width="200">
+<p align="center">
+   <img src="interface.png" alt="GraphicalVersion" width="400">
+</p>
 
 1. Set a gene (e.g., COI) and an organism (e.g., Anura)  
 2. Click “💾 Search and download sequences”  
