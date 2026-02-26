@@ -350,5 +350,5 @@ When creating an issue, you can add labels like:
 If you use ***pynnotate*** in your research, please cite it as:
 
 ```
-Caron, F. S.*, Magalhães, F. M.*, Salles, M., & Domingos, F. M. B. C. (2025). pynnotate: a flexible tool for retrieving and processing GenBank data in molecular evolution research and education. GitHub: https://github.com/fernandacaron/pynnotate
+Caron, F. S.*, Magalhães, F. M.*, Salles, M., & Domingos, F. M. B. C. (2025). pynnotate: a flexible tool for retrieving and processing GenBank data in molecular evolution research and education [Preprint]. EcoEvoRxiv. https://doi.org/10.xxxx/xxxx](https://doi.org/10.32942/X2294V
 ```
