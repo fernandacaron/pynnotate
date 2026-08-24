@@ -1,0 +1,7 @@
+{
+  "database_revision": 1,
+  "database_url": "https://raw.githubusercontent.com/fernandacaron/pynnotate/main/pynnotate/data/synonyms_database.json",
+  "dictionary_version": "2026.08.23",
+  "schema_version": 1,
+  "sha256": "367b2ad086a38f04af5a79c82be2d7e7a2e12708bfbd5d44420777b8abd86bd6"
+}
