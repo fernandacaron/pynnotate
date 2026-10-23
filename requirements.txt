@@ -1,0 +1,7 @@
+biopython
+pyyaml
+tqdm
+openpyxl
+pillow
+screeninfo
+certifi

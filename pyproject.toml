@@ -1,0 +1,29 @@
+[project]
+name = "pynnotate"
+version = "1.0.2rc1"
+description = "Pynnotate is a tool for searching, downloading, and automatically annotating genetic sequences from GenBank"
+authors = [
+    { name="Fernanda S. Caron", email="fernandadesouzacaron@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "biopython",
+    "openpyxl",
+    "tqdm",
+    "pyyaml",
+    "pillow",
+    "screeninfo",
+    "certifi"
+]
+
+[project.scripts]
+pynnotate = "pynnotate.pynnotate:main"
+
+[tool.setuptools.package-data]
+pynnotate = [
+    "data/*.png",
+    "data/*.icns",
+    "data/*.json",
+    "examples/*.yaml"
+]
